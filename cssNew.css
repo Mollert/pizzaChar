@@ -1,0 +1,45 @@
+
+#brickWall {
+	height: 60rem;
+}
+
+#newColumn {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#whosNew {
+	margin: 0 10vw;
+	font-size: 1.4rem;
+	text-align: center;
+}
+
+input.entry {
+	margin: 3rem 0;	
+	width: 20rem;
+	height: 2rem;
+	border-radius: 0.4rem;
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+#newSubmit {
+	width: 16rem;
+	height: 3rem;
+	font-size: 1.2rem;
+	border-radius: 0.4rem;	
+	background-color: peru;
+	color: maroon;
+	font-weight: bold;
+}
+
+#fillHeight {
+	background-color: whitesmoke;
+	height: 10rem;
+}
+
+@media screen and (max-width: 500px) {
+
+}

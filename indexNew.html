@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>On this page you can list a pizzeria you would like listed in the group which to choose from.</title>
+
+	<meta name="description" content="Either choose a specific type of pizza that satisfies your taste or add to the list your favorite pizzerias style of pizza.  These are all home grown in Charlotte, NC." />
+	
+	<link rel="shortcut icon" href="image/pizzaFavicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="cssIndex.css">
+	<link rel="stylesheet" type="text/css" href="cssNew.css">
+
+</head>
+<body>
+
+	<div id="brickWall">
+
+		<div id="hearth">
+
+			<div  id="siteTitle">Add a pizzeria</div>
+
+			<form id="requestNew" action="https://www.bing.com" target="_blank" method="POST">
+				<div id="newColumn">
+					<div id="whosNew">Type in the name of the pizzeria that you've found and the next time you try their pizza, come on back.  They will be listed.</div>
+
+					<input type="text" id="newPizzeria" class="entry" autocomplete="off" name="newPizzeria">
+
+					<input type="submit" id="newSubmit" value="Send me the name">
+				</div>
+			</form>
+
+		</div>
+	</div>
+
+	<div id="fillHeight"></div>
+
+	<script>
+		document.getElementById("newSubmit").addEventListener("click", () => {
+			let newPizzeria = document.getElementById("newPizzeria").value.trim();
+//			console.log(newPizzeria);
+			document.getElementById("requestNew").reset();	
+		});
+	</script>
+
+</body>
+</html>

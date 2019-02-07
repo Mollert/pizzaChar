@@ -1,0 +1,160 @@
+
+@font-face {
+	src: url(./image/CherryCreamSoda-Regular.ttf);
+	font-family: CCS;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	font-family: CCS;
+}
+
+#brickWall {
+	background-image: url(./image/brickWall.png);
+	background-repeat: repeat;
+	position: relative;
+	width: 100%;
+	height: 100rem;
+	border-top-left-radius: 30% 12rem;
+	border-top-right-radius: 30% 12rem;
+}
+
+#hearth {
+	position:absolute;
+	top: 8rem;
+	right: 10%;
+	bottom: 0;
+	left: 10%;
+	background-color: whitesmoke;
+	border-style: solid solid none solid;
+	border-width: 2rem;
+	border-color: black;
+	border-top-left-radius: 50% 10rem;
+	border-top-right-radius: 50% 10rem;
+/*	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+*/
+}
+
+#siteTitle {
+	left: 12%;
+	right: 12%;
+	height: 6rem;
+	font-size: 3rem;
+	text-align: center;
+	margin: 4rem 0 2rem 0;
+
+}
+
+.pizzaRow {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+
+}
+
+#pizzaLocation {
+	position: relative;
+	width: 25rem;
+	height: 25rem;
+
+}
+
+.pizzaAndPad {
+	position: absolute;
+	width: 100%;
+	height: auto;	
+}
+
+#siteExplanation {
+	width: 16rem;
+	height: 25rem;
+}
+
+.siteText {
+	font-size: 1.4rem;
+	text-align: center;
+	padding: 0.6rem 0;
+}
+
+.buttonText {
+	width: 31rem;
+	height: auto;
+	font-size: 1.2rem;	
+}
+
+.nextButton {
+	position: relative;
+	width: 10rem;
+	height: 10rem;		
+	background-color: dimgray;
+	border-radius: 50%;
+}
+
+.pizzaButton {
+	position: absolute;
+	width: 100%;
+	height: auto;
+}
+
+#cornerUR,
+#cornerLR {
+	float: right;
+}
+
+#dividerImage {
+	clear: right;
+	width: 100%;
+	height: auto;
+}
+
+#radiusAroundFind {
+	width: 2rem;
+	height: 9rem;
+	border-top-left-radius: 2rem 50%;
+	border-bottom-left-radius: 2rem 50%;
+	background-color: red;
+	float: right;
+	shape-outside: content-box;
+	margin-top: 3.4rem;
+	visibility: hidden;
+}
+
+#radiusAroundReport {
+	width: 2rem;
+	height: 9rem;
+	border-top-right-radius: 2rem 50%;
+	border-bottom-right-radius: 2rem 50%;
+	background-color: red;
+	float: left;
+	shape-outside: content-box;
+	margin-top: 2.6rem;
+	visibility: hidden;
+}
+
+#how {
+	margin: 1rem 0 0 3rem;
+	font-size: 1.4rem;
+}
+
+#who {
+	margin: 1rem 0 0 5rem;
+	font-size: 1.4rem;
+}
+
+@media screen and (max-width: 500px) {
+	#hearth {
+		border-width: 1.4rem;	
+		border-top-left-radius: 50% 6rem;
+		border-top-right-radius: 50% 6rem;
+	}
+	#siteTitle {
+		font-size: 2rem;
+	}	
+}

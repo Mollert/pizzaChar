@@ -1,2 +1,1 @@
-# pizzaChar
-A site where you can report or find your kind of pizza or pizzeria
+A interactive site where you can report on or find the pizza of your liking.

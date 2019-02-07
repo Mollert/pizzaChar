@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>You can choose from list of the tastiest pizzas in Charlotte, NC</title>
+
+	<meta name="description" content="Either choose a specific type of pizza that satisfies your taste or add your favorite pizzerias style of pizza to the list .  These are all home grown in Charlotte, NC." />
+	
+	<link rel="shortcut icon" href="image/pizzaFavicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="cssIndex.css">
+
+</head>
+<body>
+
+	<div id="brickWall">
+
+		<div id="hearth">
+
+			<div  id="siteTitle">Pizzas of Charlotte</div>
+
+			<div class="pizzaRow">
+				<div id="pizzaLocation">					
+					<img class="pizzaAndPad" src="./image/pizzaPaddle.png" alt="A pizza paddle."/>
+					<img class="pizzaAndPad" src="./image/slices/pepPieSliced.png" alt="Whole pizza-sliced."/>
+				</div>
+				<div id="siteExplanation">
+					<div class="siteText">Hey where'd the Pizza go!</div>
+					<div class="siteText">On this site you can either find the type of pizza you're hungry for or report on one you've had.</div>
+					<div class="siteText">Click on either of those buttons (pizzas) below depending on if you are full or hungry.</div>
+				</div>					
+			</div>
+
+			<div id="topCorners">
+				<img id="cornerUL" class="cornerButton" src="./image/cornerUL.png" alt="Upper left decorative corner."/>
+				<img id="cornerUR" class="cornerButton" src="./image/cornerUR.png" alt="Upper right decorative corner."/>
+			</div>
+
+			<div class="pizzaRow">
+				<div id="findPizzaText">
+					<div id="radiusAroundFind"></div>
+					<div class="buttonText">When you click this pizza button you will be taken to a page where you can find a pizza to your liking from a local pizzeria, no national chains.  If you haunt one of the national chains, give a local pizza a try.  There is plenty of variety here in Charlotte.  The choices are gathered from each one of your experiences and then categorized and listed so you can see the options each one offers.  I do hope you find one that looks good to you!</div>
+				</div>
+
+				<div class="nextButton" id="findPizza">
+					<form action="indexFind.html" target="_blank" method="POST">
+						<input type="image" id="findPizzaButton" class="pizzaButton" src="./image/pieButton.png" alt="Whole pizza used as button.">
+					</form>		
+				</div>
+			</div>
+
+			<div id="divider">
+				<img id="dividerImage" src="./image/divider.png" alt="Decorative divider between buttons."/>
+			</div>
+
+			<div class="pizzaRow">
+				<div class="nextButton" id="reportPizza">
+					<form action="indexReport.html" target="_blank" method="POST">
+						<input type="image" id="reportPizzaButton" class="pizzaButton" src="./image/pieButton.png" alt="Whole pizza used as button.">
+					</form>
+				</div>
+
+				<div id="reportPizzaText">
+					<div id="radiusAroundReport"></div>
+					<div class="buttonText">If you click on this pizza button, you have just finished a great pizza from one of our local pizzerias and you want to share the type with all of us.  You will be asked to check the multiple things that made the pizza one of your favorites.  We will add it to the others and offer your experience to the next site visitor.  Remember, only local chains and thanks for being a pizza informer!</div>
+				</div>
+
+			</div>
+
+			<div id="bottomCorners">
+				<img id="cornerLL" class="cornerButton" src="./image/cornerLL.png" alt="Lower left decorative corner."/>
+				<img id="cornerLR" class="cornerButton" src="./image/cornerLR.png" alt="Lower right decorative corner."/>
+			</div>
+			<div id="comments">
+				<div id="how">Direct your comments to:</div>
+				<div id="who">DMollert&#64;gmail.com</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="javascriptPizzaChar.js"></script>
+
+</body>
+</html>
