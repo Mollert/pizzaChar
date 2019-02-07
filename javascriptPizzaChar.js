@@ -46,24 +46,23 @@ const loadPizzerias = () => {
 	let noDiv = document.createElement("div");
 	noDiv.setAttribute("class", "place");
 	let noAnchor = document.createElement("a");
-	noAnchor.setAttribute("href", "./indexNew.html");
+	noAnchor.setAttribute("href", "./htmlNew.html");
 	let noText = document.createTextNode("I don't see it listed.");
 	noAnchor.appendChild(noText);
 	noDiv.appendChild(noAnchor);
-//	console.log(noDiv);
+	console.log(noDiv);
 	document.getElementById("pizzaPlace").appendChild(noDiv);
 
 };
 
 window.onload = () => {
-	loadPizzerias()
+	loadPizzerias();
 };
-
 
 document.querySelector("#pizzaPlace").addEventListener("click", (event) => {
 	let where = event.target.innerText;
 //	console.log(event.target.className);
-	if (event.target.className == "place") {
+	if (event.target.className == "place") { 
 		document.getElementById("yourChoice").innerHTML = where;
 	}
 });
