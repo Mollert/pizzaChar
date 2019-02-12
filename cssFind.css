@@ -1,4 +1,29 @@
 
+#brickWall {
+	height: 60rem;
+}
+
+#findIntro {
+	margin: 0 8vw;
+	font-size: 1.4rem;
+	text-align: center;
+}
+
+.pizzaColumn {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.pizzaRow {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
 
 
 

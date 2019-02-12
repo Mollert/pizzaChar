@@ -1,4 +1,8 @@
 
+#brickWall {
+	height: 140rem;
+}
+
 .pizzaColumn {
 	display: flex;
 	flex-direction: column;
@@ -18,13 +22,20 @@
 	height: 4rem;
 	font-size: 1.4rem;
 	background-color: sienna;
-	color: whitesmoke;
+	color: blanchedalmond;
 	border: none;
 	cursor: pointer;
+	border-radius: 0.4rem;
+	transition-property: border-radius;
+	transition-delay: 3600ms;		
 }
 
 #pulldownList:hover {
 	color: orange;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	transition-property: border-radius;
+	transition-delay: 0ms;
 }
 
 .place {
@@ -33,24 +44,152 @@
 	font-size: 1.2rem;
 	padding-top: 0.6rem;
 	text-align: center;
-	background-color: lightgray;
-	color: black;
+	background-color: burlywood;
+	color: firebrick;
 	border-top: 0.05rem solid whitesmoke;
 	cursor: pointer;
+	transition-property: transform;
+	transition-duration: 1600ms;
+	transition-timing-function: ease-in;
+	transition-delay: 2s;
+	transform-origin: top;
+	transform: rotateX(-90deg);
 }
 
-.place:hover {
-	color: red;
+.place:last-child {
+	border-bottom-left-radius: 0.4rem;
+	border-bottom-right-radius: 0.4rem;
+}
+
+.place:hover,
+.place:hover a {
+	background-color: sienna;
+	color: blanchedalmond;
+}
+
+#pulldownList:hover ~ .place {
+	transition-duration: 500ms;
+	transition-delay: 0s;
+	transform-origin: top;
+	transform: rotateX(0deg);
 }
 
 .place a {
-	color: black;
+	color: firebrick;
 	text-decoration: none;
 }
 
-.place a:hover {
-	color: red;
+#recordIntro {
+	padding: 2rem 0;
+	font-size: 1.4rem;
+	text-align: center;
+	display: none;
 }
+
+#allButtons {
+	display: none;
+}
+
+.radioBank {
+	margin-top: 1.2rem;
+	font-size: 1.4rem;	
+}
+
+.justifyLeft {
+	margin-left: 4rem;
+	align-items: flex-start;
+}
+
+.justifyRight {
+	margin-right: 4rem;
+	align-items: flex-end;
+}
+
+.radioAndLabel {
+	padding-top: 0.4rem;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+label {
+	cursor: pointer;
+}
+
+label.before::before,
+label.after::after {
+	content: "";
+	display: inline-block;
+	vertical-align: -18%;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-color: dimgray;
+	border-radius: 50%;
+	margin: 0 0.6rem;
+}
+
+input[type="radio"]:checked + label::before,
+input[type="radio"]:checked + label::after {
+	background-image: url(./image/radioButton.png);
+}
+
+#recordComment {
+	margin-top: 1.2rem;
+	font-size: 1.4rem;
+}
+
+#textArea {
+	width: 22rem;
+	height: 4rem;
+	font-size: 1.4rem;	
+	background-color: whitesmoke;
+	border: 0.2rem solid black;
+	border-radius: 0.4rem;
+}
+
+#textArea:focus {
+	border: 0.2rem solid sienna;
+}
+
+#recordPizza {
+	margin: 1.2rem 0;
+}
+
+#recordPizzaButton {
+	width: 16rem;
+	height: 3rem;
+	font-size: 1.4rem;
+	font-weight: bold;
+	background-color: sienna;
+	color: blanchedalmond;
+	border-radius: 0.4rem;
+	border: none;
+}
+
+#aboutInfo {	
+	font-size: 1.4rem;
+	text-align: center;
+	display: none;
+}
+
+#gotInfo,
+#noInfo {
+	display: none;
+}
+
+a#fromReportPage {
+	color: brown;
+}
+
+a#fromReportPage:hover {
+	color: blueviolet;
+}
+
+
+
+
+
 
 @media screen and (max-width: 500px) {
 

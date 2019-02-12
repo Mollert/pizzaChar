@@ -11,7 +11,7 @@
 	
 	<link rel="shortcut icon" href="image/pizzaFavicon.ico" type="image/x-icon">
 
-	<link rel="stylesheet" type="text/css" href="cssIndex.css">
+	<link rel="stylesheet" type="text/css" href="cssIndex.css">	
 	<link rel="stylesheet" type="text/css" href="cssFind.css">
 
 </head>
@@ -23,10 +23,27 @@
 
 			<div  id="siteTitle">Find a pizza</div>
 
+			<div id="findIntro">
+				<div class="introText">To find your perfect pizza in Charlotte.</div>
+				<div class="introText">First choose up to three preferences,</div>
+				<div class="introText">1st, 2nd and 3rd.</div>
+				<div class="introText">Then click "find" and your choices will pick the pizza.</div>
+			</div>
+
+			<form id="requestFind" action="#" method="POST">
+				<div class="pizzaColumn">
+					<div class="pizzaRow">
+						<select id="firstChoice"></select>
+						<select id="secondChoice"></select>
+						<select id="thirdChoice"></select>						
+					</div>
+				</div>
+			</form>
+
 		</div>
 	</div>
 
-	<script src="javascriptPizzaChar.js"></script>
+	<script src="javascriptFind.js"></script>
 	<script src="dbPizzaChar.js"></script>
 
 </body>

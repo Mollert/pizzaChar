@@ -3,36 +3,58 @@
 	height: 60rem;
 }
 
-#newColumn {
+#whosNew {
+	margin: 0 8vw;
+	font-size: 1.4rem;
+	text-align: center;
+}
+
+.newColumn {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
 }
 
-#whosNew {
-	margin: 0 10vw;
-	font-size: 1.4rem;
-	text-align: center;
-}
-
 input.entry {
 	margin: 3rem 0;	
 	width: 20rem;
 	height: 2rem;
+	border: 0.2rem solid black;
 	border-radius: 0.4rem;
 	font-size: 1.4rem;
 	font-weight: bold;
+	background-color: whitesmoke;
+}
+
+input.entry:focus {
+	border: 0.2rem solid sienna;
 }
 
 #newSubmit {
 	width: 16rem;
 	height: 3rem;
 	font-size: 1.2rem;
-	border-radius: 0.4rem;	
-	background-color: peru;
-	color: maroon;
+	border: none;
+	border-radius: 0.4rem;
+	background-color: sienna;
+	color: blanchedalmond;
 	font-weight: bold;
+}
+
+.addedText {
+	margin: 3rem 0;		
+	font-size: 1.4rem;
+	text-align: center;
+	display: none;
+}
+
+a#fromNewPage {
+	color: brown;
+}
+
+a#fromNewPage:hover {
+	color: blueviolet;
 }
 
 #fillHeight {

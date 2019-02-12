@@ -23,28 +23,33 @@
 
 			<div  id="siteTitle">Add a pizzeria</div>
 
-			<form id="requestNew" action="https://www.bing.com" target="_blank" method="POST">
-				<div id="newColumn">
-					<div id="whosNew">Type in the name of the pizzeria that you've found and the next time you try their pizza, come on back.  They will be listed.</div>
+			<div id="whosNew">Type in the name of the pizzeria that you've found and the next time you try their pizza, come on back.  They will be listed.</div>
 
+			<form id="requestNew" action="#" method="POST">
+				<div class="newColumn">
 					<input type="text" id="newPizzeria" class="entry" autocomplete="off" name="newPizzeria">
 
 					<input type="submit" id="newSubmit" value="Send me the name">
 				</div>
 			</form>
 
+			<div id="showNew" class="addedText newColumn">
+				<div>I got the name "<span id="addPizzeria"></span>".</div>
+				<div>So let me add it to the group.</div>
+				<div>And for you, a quick <a id="fromNewPage" href="./index.html" target="_blank">click</a> and you'll be back home . . .</div>
+			</div>
+
+			<div id="didNotGetIt" class="addedText newColumn">
+				<div>I didn't get a name so maybe try again.</div>
+				<div>If you want to get back home, here is the <a id="fromNewPage" href="./index.html" target="_blank">click</a>.</div>
+			</div>
+
 		</div>
 	</div>
 
 	<div id="fillHeight"></div>
 
-	<script>
-		document.getElementById("newSubmit").addEventListener("click", () => {
-			let newPizzeria = document.getElementById("newPizzeria").value.trim();
-//			console.log(newPizzeria);
-			document.getElementById("requestNew").reset();	
-		});
-	</script>
+	<script src="javascriptNew.js"></script>
 
 </body>
 </html>

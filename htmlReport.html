@@ -7,7 +7,7 @@
 
 	<title>Here you report on a pizza that you enjoyed from a local pizzeria in Charlotte, NC</title>
 
-	<meta name="description" content="Either choose a specific type of pizza that satisfies your taste or add to the list your favorite pizzerias style of pizza.  These are all home grown in Charlotte, NC." />
+	<meta name="description" content="You are asked to click through the options that make up a great pizza then submit your pizza so it can be conted among the other's from pizzerias in Charlotte, NC." />
 	
 	<link rel="shortcut icon" href="image/pizzaFavicon.ico" type="image/x-icon">
 
@@ -21,25 +21,179 @@
 
 		<div id="hearth">
 
-			<div  id="siteTitle">Report on a great pizza</div>
+			<div id="siteTitle">Report on a great pizza</div>
 
 			<div id="pizzaPlace" class="pizzaColumn">
 				<div id="yourChoice"></div>
-<!--				<ul id="pulldownList" class="only">Pick your pizzeria from this pulldown list.</ul>	-->
 				<button id="pulldownList">Pick your pizzeria from this pulldown list.</button>
-
-
 			</div>
 
-	
+			<div id="recordIntro" class="pizzaColumn">
+				<div class="introText">Tell us what makes this pizza your favorite.</div>
+				<div class="introText">Click on the item that describes your pizza.</div>
+				<div class="introText">Then record your pizza to include it in our survey.</div>
+			</div>
+			
+			<form id="allButtons" action="#" method="POST">
+				<div id="recordCrustTT" class="radioBank justifyLeft pizzaColumn">
+					<div id="crustIntroTT">Let's start with the crust thickness.</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="thinThin" name="crustTT" value="thinThin">
+  						<label class="before" for="thinThin">Thin center / Thin crust</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="thinThick" name="crustTT" value="thinThick">
+  						<label class="before" for="thinThick">Thin center / Thick crust</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="thick" name="crustTT" value="thick">
+  						<label class="before" for="thick">Just plain thick</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="noOpinCrustTT" name="crustTT" value="noOpinion" checked>
+  						<label class="before" for="noOpinCrustTT">No opinion</label>
+					</div>			
+				</div>
 
+				<div id="recordCrustCC" class="radioBank justifyRight pizzaColumn">
+					<div id="crustIntroCC">And was the crust chewy or crisp?</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="chewy" name="crustCC" value="chewy">
+  						<label class="after" for="chewy">Chewy</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="crisp" name="crustCC" value="crisp">
+  						<label class="after" for="crisp">Crisp</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="noOpinCrustCC" name="crustCC" value="noOpinion" checked>
+  						<label class="after" for="noOpinCrustCC">No opinion</label>
+					</div>
+				</div>
 
+				<div id="recordCrustTaste" class="radioBank justifyLeft pizzaColumn">
+					<div id="crustIntroTaste">Was the crust tasty by itself?</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="tasty" name="crustTaste" value="tasty">
+  						<label class="before" for="tasty">Tasty all by itself.</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="noTaste" name="crustTaste" value="noTaste">
+  						<label class="before" for="noTaste">No taste at all.</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="noOpinCrustTaste" name="crustTaste" value="noOpinion" checked>
+  						<label class="before" for="noOpinCrustTaste">No opinion</label>
+					</div>
+				</div>
 
+				<div id="recordSauceT" class="radioBank justifyRight pizzaColumn">
+					<div id="sauceIntroType">Let's move on to the sauce.</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="chunky" name="sauceType" value="chunky">
+  						<label class="after" for="chunky">Chunky</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="liquid" name="sauceType" value="liquid">
+  						<label class="after" for="liquid">Liquid</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="noOpinSauceType" name="sauceType" value="noOpinion" checked>
+  						<label class="after" for="noOpinSauceType">No opinion</label>
+					</div>
+				</div>
 
+				<div id="recordSauceQ" class="radioBank justifyLeft pizzaColumn">
+					<div id="sauceIntroQty">To much or to little sauce.</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="heavy" name="sauceQty" value="heavy">
+  						<label class="before" for="heavy">Heavy sauce</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="light" name="sauceQty" value="light">
+  						<label class="before" for="light">Light sauce</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="noOpinSauceQty" name="sauceQty" value="noOpinion" checked>
+  						<label class="before" for="noOpinSauceQty">No opinion</label>
+					</div>
+				</div>
+
+				<div id="recordCheese" class="radioBank justifyRight pizzaColumn">
+					<div id="cheeseIntro">Rate the quantity of cheese.</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="lightCheese" name="cheese" value="lightCheese">
+  						<label class="after" for="lightCheese">Light cheese</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="cheese" name="cheese" value="cheese">
+  						<label class="after" for="cheese">Moderate</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="heavyCheese" name="cheese" value="heavyCheese">
+  						<label class="after" for="heavyCheese">Heavy cheese</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="noOpinCheese" name="cheese" value="noOpinion" checked>
+  						<label class="after" for="noOpinCheese">No opinion</label>
+					</div>
+				</div>
+
+				<div id="recordOven" class="radioBank justifyLeft pizzaColumn">
+					<div id="ovenIntro">For those afficionados, the oven type.</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="wood" name="oven" value="wood">
+  						<label class="before" for="wood">Wood</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="gasFlame" name="oven" value="gasFlame">
+  						<label class="before" for="gasFlame">Gas flame</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="electric" name="oven" value="electric">
+  						<label class="before" for="electric">Electric</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="grill" name="oven" value="grill">
+  						<label class="before" for="grill">Grill</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="noOpinOven" name="oven" value="noOpinion" checked>
+  						<label class="before" for="noOpinOven">No opinion</label>
+					</div>					
+				</div>
+
+				<div id="recordSlice" class="radioBank justifyRight pizzaColumn">
+					<div id="sliceIntro">Can you buy just a slice?</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="sliceYes" name="slice" value="sliceYes">
+  						<label class="after" for="sliceYes">Yes you can.</label>
+					</div>
+					<div class="radioAndLabel">
+  						<input type="radio" id="sliceNo" name="slice" value="sliceNo" checked>
+  						<label class="after" for="sliceNo">Not avaialble.</label>
+					</div>
+				</div>
+
+				<div id="recordComment" class="pizzaColumn">
+ 					<label for="textArea">Add a short comment if you'd like.</label>
+ 					<textarea id="textArea" name="comment" maxlength="80"></textarea>
+				</div>
+
+				<div  id="recordPizza" class="pizzaColumn">
+					<input type="submit" id="recordPizzaButton" value="Record your pizza!">	
+				</div>
+			</form>
+
+			<div id="aboutInfo" class="pizzaColumn">
+				<div id="gotInfo">I got it.  Thanks for your input.</div>
+				<div id="noInfo">All I got was "No opinions".  So maybe try again.</div>				
+				<div>If you'd like, a quick <a id="fromReportPage" href="./index.html" target="_blank">click</a> will send you back home . . .</div>
+			</div>
 		</div>
 	</div>
 
-	<script src="javascriptPizzaChar.js"></script>
+	<script src="javascriptReport.js"></script>
 	<script src="dbPizzaChar.js"></script>
 
 </body>
