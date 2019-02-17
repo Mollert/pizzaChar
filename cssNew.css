@@ -50,16 +50,11 @@ input.entry:focus {
 }
 
 a#fromNewPage {
-	color: brown;
+	color: dimgray;
 }
 
 a#fromNewPage:hover {
-	color: blueviolet;
-}
-
-#fillHeight {
-	background-color: whitesmoke;
-	height: 10rem;
+	color: brown;
 }
 
 @media screen and (max-width: 500px) {

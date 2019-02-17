@@ -42,7 +42,7 @@ document.querySelector("#pizzaPlace").addEventListener("click", (event) => {
 //	console.log(event.target.childElementCount);
 //	console.log(event.target.className);
 	if (clicked.className == "place" && clicked.childElementCount === 0) { 
-		document.getElementById("yourChoice").innerHTML = where;
+		document.getElementById("yourChoice").textContent = where;
 		document.getElementById("recordIntro").style.display = "block";
 		document.getElementById("allButtons").style.display = "block";
 
@@ -68,7 +68,7 @@ document.getElementById("recordPizzaButton").addEventListener("click", () => {
 	if (grabData[27].value) {
 		recordData.push(grabData[27].value);
 	}		
-	console.log(recordData);
+//	console.log(recordData);
 	document.getElementById("aboutInfo").style.display = "block";		
 	if (recordData.length == 0) {
 		document.getElementById("noInfo").style.display = "block";

@@ -27,7 +27,8 @@
 	cursor: pointer;
 	border-radius: 0.4rem;
 	transition-property: border-radius;
-	transition-delay: 3600ms;		
+	transition-delay: 3600ms;
+
 }
 
 #pulldownList:hover {
@@ -179,11 +180,11 @@ input[type="radio"]:checked + label::after {
 }
 
 a#fromReportPage {
-	color: brown;
+	color: dimgray;
 }
 
 a#fromReportPage:hover {
-	color: blueviolet;
+	color: brown;
 }
 
 

@@ -24,10 +24,54 @@
 	align-items: center;
 }
 
+#allChoices {
+	margin: 1.2rem 0;
+}
 
+#secondChoice {
+	margin: 0 1rem;
+}
 
+.toSelect {
+	width: 16rem;
+	font-size: 0.9rem;
+	font-style: bold;
+	font-family: CCS;
+	background-color: whitesmoke;
+	padding: 0.6rem 0 0.6rem 0.6rem;
+	border: 0.2rem solid black;
+	border-radius: 0.4rem;
+}
 
+.toSelect:focus {
+	border: 0.2rem solid sienna;
+}
 
+#findPizzaButton {
+	width: 16rem;
+	height: 3rem;
+	font-size: 1.4rem;
+	font-weight: bold;
+	background-color: sienna;
+	color: blanchedalmond;
+	border-radius: 0.4rem;
+	border: none;
+}
+
+.showResults {
+	margin-top: 1.2rem;
+	font-size: 1.4rem;
+	text-align: center;
+	display: none;
+}
+
+a#fromFindPage {
+	color: dimgray;
+}
+
+a#fromFindPage:hover {
+	color: brown;
+}
 
 
 @media screen and (max-width: 500px) {

@@ -33,11 +33,6 @@ html, body {
 	border-color: black;
 	border-top-left-radius: 50% 10rem;
 	border-top-right-radius: 50% 10rem;
-/*	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-*/
 }
 
 #siteTitle {
