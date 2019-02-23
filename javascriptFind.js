@@ -96,12 +96,94 @@ document.getElementById("secondChoice").addEventListener("click", () => {
 });
 
 
-
+let resultsMessage = "";
 let recordChoices = [];
-let firstPreference = [];
-let secondPreference = [];
-let thirdPreference = [];
-let finalPreference = [];
+let allPizzerias = [];
+let placesWebsitesComments = [];
+let commonTwo = [];
+let commonThree = [];
+
+const reorderSolutions = (unorderedArray) => {
+	if (unorderedArray.length === 0 || unorderedArray.length === 1) {
+		return unorderedArray;
+	}
+	let addedTogether = "";
+	let capLetters = [];
+	let orderedArray = [];
+	unorderedArray.forEach (idNum => {
+		pizzerias.forEach(entry => {
+			if (entry.id === idNum) {
+				addedTogether = entry.name;
+				addedTogether += "#";
+				addedTogether += idNum;
+				capLetters.push(addedTogether);				
+			}
+		});
+	});
+	capLetters.sort();
+	capLetters.forEach (toID => {
+		orderedArray.push(Number(toID.substring(toID.indexOf("#")+1)));
+	});
+//	console.log(orderedArray);
+	return orderedArray;		
+};
+
+const postSolutions = (solutionArray) => {
+	for (let i = 0 ; i < solutionArray.length ; i+=3 ) {
+		let venueDiv = document.createElement("div");
+		venueDiv.setAttribute("class", "venue");
+		let venueText = document.createTextNode(solutionArray[i] + ": ");
+		venueDiv.appendChild(venueText);
+		let venueA = document.createElement("a");
+		venueA.href = solutionArray[i+1];
+		venueA.textContent = solutionArray[i+1];
+		venueDiv.appendChild(venueA);
+//		console.log(venueDiv);
+		let commentDiv = document.createElement("div");
+		commentDiv.setAttribute("class", "allComments");
+		for (let j = 0 ; j < solutionArray[i+2].length ; j+=2 ) {
+			let dateCommentDiv = document.createElement("div");
+			dateCommentDiv.setAttribute("class", "dateComment");
+			let dateCommentText = document.createTextNode("Comment:");
+			dateCommentDiv.appendChild(dateCommentText);
+
+			let dateCommentSpan = document.createElement("span");
+			dateCommentSpan.setAttribute("class", "date");
+			let spanText = document.createTextNode(solutionArray[i+2][j]);
+			dateCommentSpan.appendChild(spanText);
+			dateCommentDiv.appendChild(dateCommentSpan);
+
+			commentDiv.appendChild(dateCommentDiv);				
+		
+			let commentOnlyDiv = document.createElement("div");
+			commentOnlyDiv.setAttribute("class", "comment");
+			let commentText = document.createTextNode(solutionArray[i+2][j+1]);
+			commentOnlyDiv.appendChild(commentText);
+
+			commentDiv.appendChild(commentOnlyDiv);
+		};
+		venueDiv.appendChild(commentDiv);
+
+		document.getElementById("searchResults").appendChild(venueDiv);
+	};
+};
+
+const gatherDataForDisplay = (dataArray) => {
+	dataArray.forEach(equal => {
+		let addDateComments = [];			
+		placesWebsitesComments.push(pizzerias[equal]["name"]);
+		placesWebsitesComments.push(pizzerias[equal]["website"]);
+		reports.forEach(entry => {				
+			if (entry["pizzeria id"] === equal && addDateComments.length < 3) {
+				addDateComments.push(entry["date"]);									
+				addDateComments.push(entry["comments"]);
+			}	
+		});
+		placesWebsitesComments.push(addDateComments);			
+	});
+	return placesWebsitesComments;
+};
+
 
 document.getElementById("findPizzaButton").addEventListener("click", () => {
 	event.preventDefault();
@@ -111,40 +193,121 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 		if (!(grabChoices[i].value.includes("preference"))) {
 			recordChoices.push(grabChoices[i].value);
 		}		
-	}
+	};
 //	console.log(recordChoices);
-
-	if (recordChoices.length == 0) {
-		document.getElementById("noSearch").style.display = "block";
-		document.getElementById("headHome").style.display = "block";		
+	if (recordChoices.length === 0) {
+		document.getElementById("explainSearch").textContent = outputMessage[0]["message"];		
 	}
-
 	recordChoices.forEach(choice => {
-		let createArray = [];
+		let interimArray = [];
 		reports.forEach(item => {
 			if (item[choice]) {
-				createArray.push(item["pizzeria id"]);
+				if (interimArray.length === 0) {
+					interimArray.push(item["pizzeria id"]);
+				} else if (interimArray.length === 1) {
+					if (!(interimArray[0] === item["pizzeria id"])) {
+							interimArray.push(item["pizzeria id"]);
+					}
+				} else {
+					for ( let i = 0 ; i < interimArray.length ; i++ ) {
+						if (interimArray[i] === item["pizzeria id"]) {
+							i = interimArray.length;
+						} else {
+							if ((i+1) === interimArray.length) {							
+								interimArray.push(item["pizzeria id"]);
+							}
+						}
+					}
+				}
 			}
 		});
-		finalPreference.push(createArray);		
+		allPizzerias.push(interimArray);
 	});
 
-	console.log(finalPreference);
+	console.log(allPizzerias);
+//	allPizzerias[0] = reorderSolutions(allPizzerias[0]);
+//	console.log(allPizzerias[0]);
+	console.log(recordChoices);
 
-	finalPreference[0].forEach(match => {
-		finalPreference[1].forEach(same => {
-			if (match == same) {
-				console.log("Here is a match");
+	if (recordChoices.length === 1) {
+		if (allPizzerias[0].length === 0) {
+			document.getElementById("explainSearch").textContent = outputMessage[1]["message"];
+		} else if (allPizzerias[0].length === 1) {
+			document.getElementById("explainSearch").textContent = outputMessage[3]["message"];
+		} else {
+			document.getElementById("explainSearch").textContent = outputMessage[4]["message"];
+		}
+		if (allPizzerias[0].length > 0) {		
+			allPizzerias[0] = reorderSolutions(allPizzerias[0]);		
+			postSolutions(gatherDataForDisplay(allPizzerias[0]));
+		}
+	};
+
+
+	if (recordChoices.length === 2) {
+
+		if (allPizzerias[0].length === 0 && allPizzerias[1].length === 0) {
+			document.getElementById("explainSearch").textContent = outputMessage[2]["message"];
+		} else if (!(allPizzerias[0].length)) {
+			if (allPizzerias[1].length === 1) {
+				document.getElementById("explainSearch").textContent = outputMessage[7]["message"];
+			} else {
+				document.getElementById("explainSearch").textContent = outputMessage[8]["message"];
 			}
-		});		
-	});
+			allPizzerias[1] = reorderSolutions(allPizzerias[1]);
+			postSolutions(gatherDataForDisplay(allPizzerias[1]));
+		} else if (!(allPizzerias[1].length)) {
+			if (allPizzerias[0].length === 1) {
+				document.getElementById("explainSearch").textContent = outputMessage[5]["message"];
+			} else {
+				document.getElementById("explainSearch").textContent = outputMessage[6]["message"];
+			}
+			allPizzerias[0] = reorderSolutions(allPizzerias[0]);
+			postSolutions(gatherDataForDisplay(allPizzerias[0]));
+		} else {
+			for (let i = 0 ; i < allPizzerias[0].length ; i++ ) {
+				for (let j = 0 ; j < allPizzerias[1].length ; j++ ) {
+					if (allPizzerias[0][i] === allPizzerias[1][j]) {
+						commonTwo.push(allPizzerias[0][i]);
+					}
+				}
+			}
+			if (commonTwo.length === 0) {
+				if (allPizzerias[0].length) {
+					if (allPizzerias[0].length === 1) {
+						document.getElementById("explainSearch").textContent = outputMessage[5]["message"];
+					} else {
+						document.getElementById("explainSearch").textContent = outputMessage[6]["message"];
+					}
+					allPizzerias[0] = reorderSolutions(allPizzerias[0]);
+					postSolutions(gatherDataForDisplay(allPizzerias[0]));
+				} else {
+					if (allPizzerias[1].length === 1) {
+						document.getElementById("explainSearch").textContent = outputMessage[7]["message"];
+					} else {
+						document.getElementById("explainSearch").textContent = outputMessage[8]["message"];
+					}
+					allPizzerias[1] = reorderSolutions(allPizzerias[1]);
+					postSolutions(gatherDataForDisplay(allPizzerias[1]));
+				}
+			} else if (commonTwo.length === 1) {
+				document.getElementById("explainSearch").textContent = outputMessage[9]["message"];
+				commonTwo = reorderSolutions(commonTwo);
+				postSolutions(gatherDataForDisplay(commonTwo));
+			} else {
+				document.getElementById("explainSearch").textContent = outputMessage[10]["message"];
+				commonTwo = reorderSolutions(commonTwo);
+				postSolutions(gatherDataForDisplay(commonTwo));								
+			}
+//			console.log(commonTwo);
+		};
+	};
 
-//(remove.includes(item.choice))
+	if (recordChoices.length === 3) {
 
-//	console.log(finalPreference);
-//	console.log(finalPreference[2]);
-
+		
 
 
-
+	};
 });
+

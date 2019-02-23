@@ -1,6 +1,6 @@
 
 #brickWall {
-	height: 60rem;
+	height: 100rem;
 }
 
 #findIntro {
@@ -62,7 +62,7 @@
 	margin-top: 1.2rem;
 	font-size: 1.4rem;
 	text-align: center;
-	display: none;
+/*	display: none;*/
 }
 
 a#fromFindPage {

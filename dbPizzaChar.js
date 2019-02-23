@@ -23,6 +23,8 @@ const pizzerias = [
 	}		
 ];
 
+//console.log(new Date().toLocaleDateString());
+
 const reports = [
 	{
 		"id": 0,
@@ -46,6 +48,7 @@ const reports = [
 		"Oven: Electric": 0,
 		"Oven: Grill": 0,
 		"By the slice": 0,
+		"date": "2/20/2019",
 		"comments": "For me, the very best pizza in Charlotte."
 	},{
 		"id": 1,
@@ -69,7 +72,9 @@ const reports = [
 		"Oven: Electric": 1,
 		"Oven: Grill": 0,
 		"By the slice": 0,
+		"date": "2/20/2019",
 		"comments": "What a surprise here.  Good pizza!"
+//		"comments": ""
 	},{
 		"id": 2,
 		"pizzeria id": 0,
@@ -92,6 +97,7 @@ const reports = [
 		"Oven: Electric": 0,
 		"Oven: Grill": 0,
 		"By the slice": 0,
+		"date": "2/20/2019",
 		"comments": "Small family feel along with the pizza."
 	},{
 		"id": 3,
@@ -115,6 +121,7 @@ const reports = [
 		"Oven: Electric": 1,
 		"Oven: Grill": 0,
 		"By the slice": 0,
+		"date": "2/20/2019",
 		"comments": "What can I say, tasting that pizza I'll be back."
 	},{
 		"id": 4,
@@ -138,11 +145,181 @@ const reports = [
 		"Oven: Electric": 0,
 		"Oven: Grill": 0,
 		"By the slice": 0,
+		"date": "2/20/2019",
 		"comments": "Great fresh ingredients."
+	},{
+		"id": 5,
+		"pizzeria id": 0,
+		"Crust: Thin center/Thin crust": 0,
+		"Crust: Thin center/Thick crust": 0,
+		"Crust: Thick center/Thick crust": 1,
+		"Crust: Chewy": 1,
+		"Crust: Crisp": 0,
+		"Crust: Tasty all by itself": 1,
+		"Crust: No taste at all": 0,
+		"Sauce: Chuncky": 1,
+		"Sauce: Liquid": 0,
+		"Sauce: Heavy": 0,
+		"Sauce: Light": 1,
+		"Cheese: Light": 1,
+		"Cheese: Moderate": 0,
+		"Cheese: Heavy": 0,
+		"Oven: Wood": 0,
+		"Oven: Gas flame": 1,
+		"Oven: Electric": 0,
+		"Oven: Grill": 0,
+		"By the slice": 0,
+		"date": "2/20/2019",
+		"comments": "Found this years ago and still great."
+	},{
+		"id": 6,
+		"pizzeria id": 2,
+		"Crust: Thin center/Thin crust": 0,
+		"Crust: Thin center/Thick crust": 0,
+		"Crust: Thick center/Thick crust": 1,
+		"Crust: Chewy": 1,
+		"Crust: Crisp": 0,
+		"Crust: Tasty all by itself": 1,
+		"Crust: No taste at all": 0,
+		"Sauce: Chuncky": 1,
+		"Sauce: Liquid": 0,
+		"Sauce: Heavy": 0,
+		"Sauce: Light": 1,
+		"Cheese: Light": 1,
+		"Cheese: Moderate": 0,
+		"Cheese: Heavy": 0,
+		"Oven: Wood": 0,
+		"Oven: Gas flame": 1,
+		"Oven: Electric": 0,
+		"Oven: Grill": 0,
+		"By the slice": 0,
+		"date": "2/20/2019",
+		"comments": "They even have a lunch buffet of pizza."
+	},{
+		"id": 7,
+		"pizzeria id": 0,
+		"Crust: Thin center/Thin crust": 0,
+		"Crust: Thin center/Thick crust": 0,
+		"Crust: Thick center/Thick crust": 1,
+		"Crust: Chewy": 1,
+		"Crust: Crisp": 0,
+		"Crust: Tasty all by itself": 1,
+		"Crust: No taste at all": 0,
+		"Sauce: Chuncky": 1,
+		"Sauce: Liquid": 0,
+		"Sauce: Heavy": 0,
+		"Sauce: Light": 1,
+		"Cheese: Light": 1,
+		"Cheese: Moderate": 0,
+		"Cheese: Heavy": 0,
+		"Oven: Wood": 0,
+		"Oven: Gas flame": 1,
+		"Oven: Electric": 0,
+		"Oven: Grill": 0,
+		"By the slice": 0,
+		"date": "2/20/2019",
+		"comments": "Pizza's are huge and full."
+	},{
+		"id": 8,
+		"pizzeria id": 4,
+		"Crust: Thin center/Thin crust": 0,
+		"Crust: Thin center/Thick crust": 0,
+		"Crust: Thick center/Thick crust": 1,
+		"Crust: Chewy": 1,
+		"Crust: Crisp": 0,
+		"Crust: Tasty all by itself": 1,
+		"Crust: No taste at all": 0,
+		"Sauce: Chuncky": 1,
+		"Sauce: Liquid": 0,
+		"Sauce: Heavy": 0,
+		"Sauce: Light": 1,
+		"Cheese: Light": 1,
+		"Cheese: Moderate": 0,
+		"Cheese: Heavy": 0,
+		"Oven: Wood": 0,
+		"Oven: Gas flame": 1,
+		"Oven: Electric": 0,
+		"Oven: Grill": 0,
+		"By the slice": 0,
+		"date": "2/20/2019",
+		"comments": "Try the garlic knots."
+	},{
+		"id": 9,
+		"pizzeria id": 2,
+		"Crust: Thin center/Thin crust": 0,
+		"Crust: Thin center/Thick crust": 0,
+		"Crust: Thick center/Thick crust": 1,
+		"Crust: Chewy": 1,
+		"Crust: Crisp": 0,
+		"Crust: Tasty all by itself": 1,
+		"Crust: No taste at all": 0,
+		"Sauce: Chuncky": 1,
+		"Sauce: Liquid": 0,
+		"Sauce: Heavy": 0,
+		"Sauce: Light": 1,
+		"Cheese: Light": 1,
+		"Cheese: Moderate": 0,
+		"Cheese: Heavy": 0,
+		"Oven: Wood": 0,
+		"Oven: Gas flame": 1,
+		"Oven: Electric": 0,
+		"Oven: Grill": 0,
+		"By the slice": 0,
+		"date": "2/20/2019",
+		"comments": "Wish I could make one like this at home."
+	},{
+		"id": 10,
+		"pizzeria id": 0,
+		"Crust: Thin center/Thin crust": 0,
+		"Crust: Thin center/Thick crust": 0,
+		"Crust: Thick center/Thick crust": 1,
+		"Crust: Chewy": 1,
+		"Crust: Crisp": 0,
+		"Crust: Tasty all by itself": 1,
+		"Crust: No taste at all": 0,
+		"Sauce: Chuncky": 1,
+		"Sauce: Liquid": 0,
+		"Sauce: Heavy": 0,
+		"Sauce: Light": 1,
+		"Cheese: Light": 1,
+		"Cheese: Moderate": 0,
+		"Cheese: Heavy": 0,
+		"Oven: Wood": 0,
+		"Oven: Gas flame": 1,
+		"Oven: Electric": 0,
+		"Oven: Grill": 0,
+		"By the slice": 0,
+		"date": "2/20/2019",
+		"comments": "Our personal go to place."
+	},{
+		"id": 11,
+		"pizzeria id": 4,
+		"Crust: Thin center/Thin crust": 0,
+		"Crust: Thin center/Thick crust": 0,
+		"Crust: Thick center/Thick crust": 1,
+		"Crust: Chewy": 0,
+		"Crust: Crisp": 1,
+		"Crust: Tasty all by itself": 0,
+		"Crust: No taste at all": 1,
+		"Sauce: Chuncky": 1,
+		"Sauce: Liquid": 0,
+		"Sauce: Heavy": 0,
+		"Sauce: Light": 1,
+		"Cheese: Light": 0,
+		"Cheese: Moderate": 0,
+		"Cheese: Heavy": 1,
+		"Oven: Wood": 0,
+		"Oven: Gas flame": 0,
+		"Oven: Electric": 1,
+		"Oven: Grill": 0,
+		"By the slice": 0,
+		"date": "2/20/2019",
+		"comments": "Found this years ago and still great."
+//		"comments": ""
 	}
 ];
 
-const selections= [
+const selections = [
 	{
 		"id": 0,
 		"choice": "Crust: Thin center/Thin crust"
@@ -202,3 +379,38 @@ const selections= [
 		"choice": "By the slice"
 	}
 ];
+
+const outputMessage = [
+	{
+		"message": 'First pick your preferences before clicking "Find your pizza!".'
+	},{
+		"message": "Your single preference came up empty, no match."
+	},{
+		"message": "Your preferences came up empty, no match."
+	},{
+		"message": "Your single preference came up with one match."
+	},{
+		"message": "Your single preference came up with multiple matches."
+	},{
+		"message": "There was not a match of your two preferences, but came up with a single match when using only your first preference."
+	},{
+		"message": "There was not a match of your two preferences, but came up with multiple matchs when using only your first preference."
+	},{
+		"message": "There was not a match of your two preferences, but came up with a single match when using only your second preference."
+	},{
+		"message": "There was not a match of your two preferences, but came up with multiple matchs when using only your second preference."
+	},{
+		"message": "Your preferences came up with one match."
+	},{
+		"message": "Your preferences came up with multiple matches."
+	},{
+		"message": "There was not a match of your three preferences, but came up with a single match when using only your first two preference."
+	},{
+		"message": "There was not a match of your three preferences, but came up with multiple matchs when using only your first two preference."
+	},{
+		"message": "There was not a match of your three preferences, or your last two preferences, but came up with a single match when using only your first preference."
+	},{
+		"message": "There was not a match of your three preferences, or your last two preferences, but came up with multiple matchs when using only your first preferences."
+	}
+];
+

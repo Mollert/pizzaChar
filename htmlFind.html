@@ -46,15 +46,15 @@
 					<input type="submit" id="findPizzaButton" value="Find your pizza!">	
 				</div>
 			</form>
-
+<!--
 			<div id="noSearch" class="showResults pizzaColumn">
 				<div>You need to first pick your preferences.</div>
 				<div>And then find your pizza!</div>
 			</div>
 
 			<div id="firstSearch" class="showResults pizzaColumn">
-				<div>The search came up with <span id="findNumber">X</span> viable solution<span id="findNumber">s</span>.</div>
-				<div id="firstTry">Xxxx Xxxxx Xxxxx</div>
+				<div>The search came up with <span id="findNumber">X</span> viable solution<span id="numberS">s</span>.</div>
+				<div id="firstTry"></div>
 			</div>
 
 			<div id="anotherSearch" class="showResults pizzaColumn">							
@@ -68,6 +68,9 @@
 				<div>Came up empty, sorry.</div>
 				<div>Try again later or add a pizza to the mix.</div>
 			</div>
+-->
+			<div id="explainSearch" class="showResults pizzaColumn"></div>
+			<div id="searchResults" class="showResults pizzaColumn"></div>
 
 			<div id="headHome" class="showResults pizzaColumn">
 				<div>If you'd like, a quick <a id="fromFindPage" href="./index.html" target="_blank">click</a> and you'll be back to home . . .</div>
@@ -76,8 +79,8 @@
 		</div>
 	</div>
 
-	<script src="javascriptFind.js"></script>
 	<script src="dbPizzaChar.js"></script>
+	<script src="javascriptFind.js"></script>
 
 </body>
 </html>
