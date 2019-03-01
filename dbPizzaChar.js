@@ -384,33 +384,52 @@ const outputMessage = [
 	{
 		"message": 'First pick your preferences before clicking "Find your pizza!".'
 	},{
-		"message": "Your single preference came up empty, no match."
+		"message": "Sorry, no match to your only preference."
 	},{
-		"message": "Your preferences came up empty, no match."
+		"message": "Sorry, no match to any of your preferences."
 	},{
-		"message": "Your single preference came up with one match."
+		"message": "Your single preference came up with this one match."
 	},{
-		"message": "Your single preference came up with multiple matches."
+		"message": "Your single preference came up with these matches."
 	},{
-		"message": "There was not a match of your two preferences, but came up with a single match when using only your first preference."
+		"message": "Sorry, no match to your two preferences, but this match came up when using only your first preference."
 	},{
-		"message": "There was not a match of your two preferences, but came up with multiple matchs when using only your first preference."
+		"message": "Sorry, no match to your two preferences, but these matches came up when using only your first preference."
 	},{
-		"message": "There was not a match of your two preferences, but came up with a single match when using only your second preference."
+		"message": "Sorry, no match to your two preferences, but this match came up when using only your second preference."
 	},{
-		"message": "There was not a match of your two preferences, but came up with multiple matchs when using only your second preference."
+		"message": "Sorry, no match to your two preferences, but these matches came up when using only your second preference."
 	},{
-		"message": "Your preferences came up with one match."
+		"message": "Your two preferences came up with this match."
 	},{
-		"message": "Your preferences came up with multiple matches."
+		"message": "Your two preferences came up with these matches."
 	},{
-		"message": "There was not a match of your three preferences, but came up with a single match when using only your first two preference."
+		"message": "Sorry, no match to your three preferences, but this match came up when using just your first two preference."
 	},{
-		"message": "There was not a match of your three preferences, but came up with multiple matchs when using only your first two preference."
+		"message": "Sorry, no match to your three preferences, but these matches came up when using just your first two preference."
 	},{
-		"message": "There was not a match of your three preferences, or your last two preferences, but came up with a single match when using only your first preference."
+		"message": "Sorry, no match to your three preferences, but this match came up when using your first and third preference."
 	},{
-		"message": "There was not a match of your three preferences, or your last two preferences, but came up with multiple matchs when using only your first preferences."
+		"message": "Sorry, no match to your three preferences, but these matches came up when using your first and third preference."
+	},{
+		"message": "Sorry, no match to your three preferences, but this match came up when using your second and third preference."
+	},{
+		"message": "Sorry, no match to your three preferences, but these matches came up when using your second and third preference."
+	},{
+		"message": "Sorry, no match to your three preferences, but this match came up when using only your first preference."
+	},{
+		"message": "Sorry, no match to your three preferences, but these matches came up when using only your first preference."
+	},{	
+		"message": "Sorry, no match to your three preferences, but this match came up when using only your second preference."
+	},{
+		"message": "Sorry, no match to your three preferences, but these matches came up when using only your second preference."
+	},{
+		"message": "Sorry, no match to your three preferences, but this match came up when using only your third preference."
+	},{
+		"message": "Sorry, no match to your three preferences, but these matches came up when using only your third preference."
+	},{
+		"message": "Your three preferences came up with this match."
+	},{
+		"message": "Your three preferences came up with these matches."
 	}
 ];
-

@@ -1,6 +1,6 @@
 
 #brickWall {
-	height: 100rem;
+	height: 48rem;
 }
 
 #findIntro {
@@ -58,14 +58,37 @@
 	border: none;
 }
 
-.showResults {
+#explainSearch,
+#headHome {
 	margin-top: 1.2rem;
 	font-size: 1.4rem;
 	text-align: center;
-/*	display: none;*/
+}
+
+.venue {
+	margin: 1rem 1rem;
+	font-size: 1.2rem	
+}
+
+.allComments {
+	font-size: 1.0rem
+}
+
+.oneComment {
+	margin: 0.4rem 1rem 0rem 1rem;	
+	padding: 0.6rem 1rem;
+	border: 0.2rem solid firebrick;
+	border-radius: 1.2rem;
+	background-color: gainsboro;
+}
+
+.date {
+	font-size: 0.8rem;
+	float: right;
 }
 
 a#fromFindPage {
+	clear: both;
 	color: dimgray;
 }
 
