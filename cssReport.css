@@ -1,6 +1,6 @@
 
 #brickWall {
-	height: 140rem;
+	height: 70rem;
 }
 
 .pizzaColumn {
@@ -11,16 +11,17 @@
 }
 
 #yourChoice {
-	height: 4rem;
 	font-size: 2rem;
 	color: sienna;
 	font-style: bold;
+	text-align: center;
+	margin-bottom: 2rem;
 }
 
 #pulldownList {
 	width: 28rem;
 	height: 4rem;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	background-color: sienna;
 	color: blanchedalmond;
 	border: none;
@@ -81,8 +82,8 @@
 }
 
 #recordIntro {
-	padding: 2rem 0;
-	font-size: 1.4rem;
+	padding: 2rem 1rem;
+	font-size: 1.2rem;
 	text-align: center;
 	display: none;
 }
@@ -93,7 +94,7 @@
 
 .radioBank {
 	margin-top: 1.2rem;
-	font-size: 1.4rem;	
+	font-size: 1.2rem;	
 }
 
 .justifyLeft {
@@ -137,13 +138,13 @@ input[type="radio"]:checked + label::after {
 
 #recordComment {
 	margin-top: 1.2rem;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 }
 
 #textArea {
 	width: 22rem;
 	height: 4rem;
-	font-size: 1.4rem;	
+	font-size: 1.2rem;	
 	background-color: whitesmoke;
 	border: 0.2rem solid black;
 	border-radius: 0.4rem;
@@ -153,6 +154,11 @@ input[type="radio"]:checked + label::after {
 	border: 0.2rem solid sienna;
 }
 
+#thisLabel {
+	padding: 0 1rem;
+	text-align: center;
+}
+
 #recordPizza {
 	margin: 1.2rem 0;
 }
@@ -160,7 +166,7 @@ input[type="radio"]:checked + label::after {
 #recordPizzaButton {
 	width: 16rem;
 	height: 3rem;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	font-weight: bold;
 	background-color: sienna;
 	color: blanchedalmond;
@@ -169,7 +175,7 @@ input[type="radio"]:checked + label::after {
 }
 
 #aboutInfo {	
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	text-align: center;
 	display: none;
 }
@@ -187,11 +193,27 @@ a#fromReportPage:hover {
 	color: brown;
 }
 
-
-
-
-
+@media screen and (max-width: 750px) {
+	#yourChoice {
+		margin: 0 1rem 2rem 1rem;
+	}
+	#pulldownList,
+	.place {
+		width: 20rem;
+	}
+}
 
 @media screen and (max-width: 500px) {
+	#pulldownList,
+	.place {
+		width: 16rem;
+		height: 4rem;		
+	}
+}
 
+@media screen and (max-width: 400px) {
+	#pulldownList,
+	.place {
+		width: 12rem;
+	}
 }

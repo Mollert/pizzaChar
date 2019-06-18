@@ -96,6 +96,7 @@ document.getElementById("secondChoice").addEventListener("click", () => {
 	}
 });
 
+/*###########################################*/
 
 let resultsMessage = "";
 let recordChoices = [];
@@ -103,6 +104,10 @@ let allPizzerias = [];
 let placesWebsitesComments = [];
 let commonTwo = [];
 let commonThree = [];
+let commonTwo01 = [];
+let commonTwo02 = [];
+let commonTwo12 = [];
+
 
 const reorderSolutions = (unorderedArray) => {
 	if (unorderedArray.length === 0 || unorderedArray.length === 1) {
@@ -137,7 +142,9 @@ const postSolutions = (solutionArray) => {
 		venueDiv.appendChild(venueText);
 		let venueA = document.createElement("a");
 		venueA.href = solutionArray[i+1];
-		venueA.textContent = solutionArray[i+1];
+//		venueA.textContent = solutionArray[i+1];
+		venueA.target = "_blank";
+		venueA.textContent = "I'll take you to them!";
 		venueDiv.appendChild(venueA);
 //		console.log(venueDiv);
 		let commentDiv = document.createElement("div");
@@ -173,8 +180,8 @@ const postSolutions = (solutionArray) => {
 
 		document.getElementById("searchResults").appendChild(venueDiv);
 	};
-	let heightDiff = (document.body.scrollHeight) - 768;
-	let newHeight = parseInt(48 + (heightDiff / 16) + 3);	
+	let heightDiff = (document.body.scrollHeight) - 960;
+	let newHeight = parseInt(60 + (heightDiff / 16) + 3);	
 	let updatedHeight = newHeight + "rem";
 	document.getElementById("brickWall").style.height = updatedHeight;
 };
@@ -195,9 +202,9 @@ const gatherDataForDisplay = (dataArray) => {
 	return placesWebsitesComments;
 };
 
-const orgAndSend = (num) => {
-	allPizzerias[num] = reorderSolutions(allPizzerias[num]);
-	postSolutions(gatherDataForDisplay(allPizzerias[num]));
+const orgAndSend = (what) => {
+	what = reorderSolutions(what);
+	postSolutions(gatherDataForDisplay(what));
 };
 
 
@@ -258,7 +265,7 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 			}
 		}
 		if (allPizzerias[0].length > 0) {
-			orgAndSend(0);
+			orgAndSend(allPizzerias[0]);
 		}
 	};
 
@@ -273,7 +280,7 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 				} else {
 					document.getElementById("explainSearch").textContent = outputMessage[8]["message"];
 				}
-				orgAndSend(1);
+				orgAndSend(allPizzerias[1]);
 			} else {			
 				if (allPizzerias[1].length === 0) {
 					if (allPizzerias[0].length === 1) {
@@ -281,7 +288,7 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 					} else {
 						document.getElementById("explainSearch").textContent = outputMessage[6]["message"];
 					}
-					orgAndSend(0);
+					orgAndSend(allPizzerias[0]);
 				} else {
 					for (let i = 0 ; i < allPizzerias[0].length ; i++) {
 						for (let j = 0 ; j < allPizzerias[1].length ; j++) {
@@ -291,31 +298,19 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 						}
 					}
 					if (commonTwo.length === 0) {			
-						if (allPizzerias[0].length) {
-							if (allPizzerias[0].length === 1) {
-								document.getElementById("explainSearch").textContent = outputMessage[5]["message"];
-							} else {
-								document.getElementById("explainSearch").textContent = outputMessage[6]["message"];
-							}
-							orgAndSend(0);
+						if (allPizzerias[0].length === 1) {
+							document.getElementById("explainSearch").textContent = outputMessage[5]["message"];
 						} else {
-							if (allPizzerias[1].length === 1) {
-								document.getElementById("explainSearch").textContent = outputMessage[7]["message"];
-							} else {
-								document.getElementById("explainSearch").textContent = outputMessage[8]["message"];
-							}
-							orgAndSend(1);
+							document.getElementById("explainSearch").textContent = outputMessage[6]["message"];
 						}
+						orgAndSend(allPizzerias[0]);
 					}
 					if (commonTwo.length === 1) {
 						document.getElementById("explainSearch").textContent = outputMessage[9]["message"];
-						commonTwo = reorderSolutions(commonTwo);
-						postSolutions(gatherDataForDisplay(commonTwo));
 					} else {
-						document.getElementById("explainSearch").textContent = outputMessage[10]["message"];
-						commonTwo = reorderSolutions(commonTwo);
-						postSolutions(gatherDataForDisplay(commonTwo));								
+						document.getElementById("explainSearch").textContent = outputMessage[10]["message"];						
 					}
+					orgAndSend(commonTwo);						
 				}
 			}
 		}
@@ -333,7 +328,8 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 				} else {
 					document.getElementById("explainSearch").textContent = outputMessage[18]["message"];
 				}
-				orgAndSend(0);
+				orgAndSend(allPizzerias[0]);
+				console.log(329);
 			}
 			if (allPizzerias[0].length === 0 && allPizzerias[2].length === 0) {
 				if (allPizzerias[1].length === 1) {
@@ -341,7 +337,8 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 				} else {
 					document.getElementById("explainSearch").textContent = outputMessage[20]["message"];
 				}
-				orgAndSend(1);
+				orgAndSend(allPizzerias[1]);
+				console.log(338);
 			}
 			if (allPizzerias[0].length === 0 && allPizzerias[1].length === 0) {
 				if (allPizzerias[2].length === 1) {
@@ -349,7 +346,8 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 				} else {
 					document.getElementById("explainSearch").textContent = outputMessage[22]["message"];
 				}
-				orgAndSend(2);
+				orgAndSend(allPizzerias[2]);
+				console.log(347);
 			}
 			if (allPizzerias[0].length !== 0 && allPizzerias[1].length !== 0 && allPizzerias[2].length === 0) {
 				for (let i = 0 ; i < allPizzerias[0].length ; i++) {
@@ -360,31 +358,21 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 					}
 				}
 				if (commonTwo.length === 0) {
-					if (allPizzerias[0].length) {
-						if (allPizzerias[0].length === 1) {
-							document.getElementById("explainSearch").textContent = outputMessage[17]["message"];
-						} else {
-							document.getElementById("explainSearch").textContent = outputMessage[18]["message"];
-						}
-						orgAndSend(0);
+					if (allPizzerias[0].length === 1) {
+						document.getElementById("explainSearch").textContent = outputMessage[17]["message"];
 					} else {
-						if (allPizzerias[1].length === 1) {
-							document.getElementById("explainSearch").textContent = outputMessage[19]["message"];
-						} else {
-							document.getElementById("explainSearch").textContent = outputMessage[20]["message"];
-						}
-						orgAndSend(1);
+						document.getElementById("explainSearch").textContent = outputMessage[18]["message"];
 					}
+					orgAndSend(allPizzerias[0]);
+					console.log(364);
 				} else {
 					if (commonTwo.length === 1) {
 						document.getElementById("explainSearch").textContent = outputMessage[11]["message"];
-						commonTwo = reorderSolutions(commonTwo);
-						postSolutions(gatherDataForDisplay(commonTwo));
 					} else {
 						document.getElementById("explainSearch").textContent = outputMessage[12]["message"];
-						commonTwo = reorderSolutions(commonTwo);
-						postSolutions(gatherDataForDisplay(commonTwo));								
 					}
+					orgAndSend(commonTwo);
+					console.log(372);											
 				}
 			}
 			if (allPizzerias[0].length !== 0 && allPizzerias[1].length === 0 && allPizzerias[2].length !== 0) {
@@ -396,31 +384,21 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 					}
 				}
 				if (commonTwo.length === 0) {
-					if (allPizzerias[0].length) {
-						if (allPizzerias[0].length === 1) {
-							document.getElementById("explainSearch").textContent = outputMessage[17]["message"];
-						} else {
-							document.getElementById("explainSearch").textContent = outputMessage[18]["message"];
-						}
-						orgAndSend(0);
+					if (allPizzerias[0].length === 1) {
+						document.getElementById("explainSearch").textContent = outputMessage[17]["message"];
 					} else {
-						if (allPizzerias[2].length === 1) {
-							document.getElementById("explainSearch").textContent = outputMessage[21]["message"];
-						} else {
-							document.getElementById("explainSearch").textContent = outputMessage[22]["message"];
-						}
-						orgAndSend(2);
+						document.getElementById("explainSearch").textContent = outputMessage[18]["message"];
 					}
+					orgAndSend(allPizzerias[0]);
+					console.log(390);
 				} else {
 					if (commonTwo.length === 1) {
 						document.getElementById("explainSearch").textContent = outputMessage[13]["message"];
-						commonTwo = reorderSolutions(commonTwo);
-						postSolutions(gatherDataForDisplay(commonTwo));
 					} else {
 						document.getElementById("explainSearch").textContent = outputMessage[14]["message"];
-						commonTwo = reorderSolutions(commonTwo);
-						postSolutions(gatherDataForDisplay(commonTwo));								
 					}
+					orgAndSend(commonTwo);
+					console.log(398);
 				}
 			}
 			if (allPizzerias[0].length === 0 && allPizzerias[1].length !== 0 && allPizzerias[2].length !== 0) {
@@ -432,31 +410,21 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 					}
 				}
 				if (commonTwo.length === 0) {
-					if (allPizzerias[1].length) {
-						if (allPizzerias[1].length === 1) {
-							document.getElementById("explainSearch").textContent = outputMessage[19]["message"];
-						} else {
-							document.getElementById("explainSearch").textContent = outputMessage[20]["message"];
-						}
-						orgAndSend(1);
+					if (allPizzerias[1].length === 1) {
+						document.getElementById("explainSearch").textContent = outputMessage[19]["message"];
 					} else {
-						if (allPizzerias[2].length === 1) {
-							document.getElementById("explainSearch").textContent = outputMessage[21]["message"];
-						} else {
-							document.getElementById("explainSearch").textContent = outputMessage[22]["message"];
-						}
-						orgAndSend(2);
+						document.getElementById("explainSearch").textContent = outputMessage[20]["message"];
 					}
+					orgAndSend(allPizzerias[1]);
+					console.log(416);
 				} else {
 					if (commonTwo.length === 1) {
 						document.getElementById("explainSearch").textContent = outputMessage[15]["message"];
-						commonTwo = reorderSolutions(commonTwo);
-						postSolutions(gatherDataForDisplay(commonTwo));
 					} else {
 						document.getElementById("explainSearch").textContent = outputMessage[16]["message"];
-						commonTwo = reorderSolutions(commonTwo);
-						postSolutions(gatherDataForDisplay(commonTwo));								
 					}
+					orgAndSend(commonTwo);
+					console.log(424);
 				}
 			} else {
 				for (let i = 0 ; i < allPizzerias[0].length ; i++) {
@@ -472,77 +440,68 @@ document.getElementById("findPizzaButton").addEventListener("click", () => {
 					for (let i = 0 ; i < allPizzerias[0].length ; i++) {
 						for (let j = 0 ; j < allPizzerias[1].length ; j++) {
 							if (allPizzerias[0][i] === allPizzerias[1][j]) {
-								commonTwo.push(allPizzerias[0][i]);
+								commonTwo01.push(allPizzerias[0][i]);
 							}
 						}
 					}
-					if (commonTwo.length) {
-						if (commonTwo.length === 1) {
+					if (commonTwo01.length) {
+						if (commonTwo01.length === 1) {
 							document.getElementById("explainSearch").textContent = outputMessage[11]["message"];
-							commonTwo = reorderSolutions(commonTwo);
-							postSolutions(gatherDataForDisplay(commonTwo));
 						} else {
 							document.getElementById("explainSearch").textContent = outputMessage[12]["message"];
-							commonTwo = reorderSolutions(commonTwo);
-							postSolutions(gatherDataForDisplay(commonTwo));								
 						}
+						orgAndSend(commonTwo01);
+						console.log(451);						
 					}
 					for (let i = 0 ; i < allPizzerias[0].length ; i++) {
 						for (let j = 0 ; j < allPizzerias[2].length ; j++) {
 							if (allPizzerias[0][i] === allPizzerias[2][j]) {
-								commonTwo.push(allPizzerias[0][i]);
+								commonTwo02.push(allPizzerias[0][i]);
 							}
 						}
 					}
-					if (commonTwo.length) {
-						if (commonTwo.length === 1) {
+					if (commonTwo02.length && commonTwo01.length === 0) {
+						if (commonTwo.length02 === 1) {
 							document.getElementById("explainSearch").textContent = outputMessage[13]["message"];
-							commonTwo = reorderSolutions(commonTwo);
-							postSolutions(gatherDataForDisplay(commonTwo));
 						} else {
 							document.getElementById("explainSearch").textContent = outputMessage[14]["message"];
-							commonTwo = reorderSolutions(commonTwo);
-							postSolutions(gatherDataForDisplay(commonTwo));								
 						}
+						orgAndSend(commonTwo02);
+						console.log(467);
 					}
 					for (let i = 0 ; i < allPizzerias[1].length ; i++) {
 						for (let j = 0 ; j < allPizzerias[2].length ; j++) {
 							if (allPizzerias[1][i] === allPizzerias[2][j]) {
-								commonTwo.push(allPizzerias[1][i]);
+								commonTwo12.push(allPizzerias[1][i]);
 							}
 						}
 					}
-					if (commonTwo.length) {
-						if (commonTwo.length === 1) {
+					if (commonTwo12.length && commonTwo01.length === 0 && commonTwo02.length === 0) {
+						if (commonTwo12.length === 1) {
 							document.getElementById("explainSearch").textContent = outputMessage[15]["message"];
-							commonTwo = reorderSolutions(commonTwo);
-							postSolutions(gatherDataForDisplay(commonTwo));
 						} else {
 							document.getElementById("explainSearch").textContent = outputMessage[16]["message"];
-							commonTwo = reorderSolutions(commonTwo);
-							postSolutions(gatherDataForDisplay(commonTwo));								
 						}
+						orgAndSend(commonTwo12);
+						console.log(483);
 					}
-					if (commonTwo.length === 0) {
-						if (allPizzerias[0].length) {
-							if (allPizzerias[0].length === 1) {
-								document.getElementById("explainSearch").textContent = outputMessage[17]["message"];
-							} else {
-								document.getElementById("explainSearch").textContent = outputMessage[18]["message"];
-							}
-							orgAndSend(1);
+					if (commonTwo01.length === 0 && commonTwo02.length === 0 && commonTwo12.length === 0) {
+						if (allPizzerias[0].length === 1) {
+							document.getElementById("explainSearch").textContent = outputMessage[17]["message"];
+						} else {
+							document.getElementById("explainSearch").textContent = outputMessage[18]["message"];
 						}
+						orgAndSend(allPizzerias[0]);
+						console.log(492);
 					}
 				} else {
 					if (commonThree.length === 1) {
 						document.getElementById("explainSearch").textContent = outputMessage[23]["message"];
-						commonThree = reorderSolutions(commonThree);
-						postSolutions(gatherDataForDisplay(commonThree));
 					} else {
 						document.getElementById("explainSearch").textContent = outputMessage[24]["message"];
-						commonThree = reorderSolutions(commonThree);
-						postSolutions(gatherDataForDisplay(commonThree));								
 					}
+					orgAndSend(commonThree);
+					console.log(501);
 				}
 			}
 		}

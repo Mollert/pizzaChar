@@ -12,7 +12,7 @@ html, body {
 }
 
 #brickWall {
-	background-image: url(./image/brickWallCompress.png);
+	background-image: url(./image/brickWall.png);
 	background-repeat: repeat;
 	position: relative;
 	width: 100%;
@@ -36,13 +36,9 @@ html, body {
 }
 
 #siteTitle {
-	left: 12%;
-	right: 12%;
-	height: 6rem;
-	font-size: 3rem;
+	font-size: 120%;
 	text-align: center;
-	margin: 4rem 0 2rem 0;
-
+	margin: 4rem 2rem 2rem 2rem;
 }
 
 .pizzaRow {
@@ -51,7 +47,7 @@ html, body {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-
+	margin: 0 2.2rem;
 }
 
 #pizzaLocation {
@@ -73,7 +69,7 @@ html, body {
 }
 
 .siteText {
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	text-align: center;
 	padding: 0.6rem 0;
 }
@@ -81,7 +77,9 @@ html, body {
 .buttonText {
 	width: 31rem;
 	height: auto;
-	font-size: 1.2rem;	
+	font-size: 1.2rem;
+	text-align: justify;
+	text-justify: inter-word;
 }
 
 .nextButton {
@@ -90,6 +88,7 @@ html, body {
 	height: 10rem;		
 	background-color: dimgray;
 	border-radius: 50%;
+	margin: 1rem 0;
 }
 
 .pizzaButton {
@@ -135,21 +134,67 @@ html, body {
 
 #how {
 	margin: 1rem 0 0 3rem;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 }
 
 #who {
 	margin: 1rem 0 0 5rem;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 }
 
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 986px) {
+	#brickWall {
+		height: 144rem;
+	}
+	#radiusAroundFind,
+	#radiusAroundReport {
+		display: none;
+	}
+	.buttonText {
+		width: 50vw;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#brickWall {
+		height: 160rem;
+		border-top-left-radius: 30% 7rem;
+		border-top-right-radius: 30% 7rem;
+	}
 	#hearth {
 		border-width: 1.4rem;	
 		border-top-left-radius: 50% 6rem;
 		border-top-right-radius: 50% 6rem;
 	}
 	#siteTitle {
-		font-size: 2rem;
+		margin: 4rem 1rem 2rem 1rem;
+		font-size: 100%;
+	}
+	#pizzaLocation {
+		height: 66vw;
+	}
+	#how {
+		margin: 1rem 2rem 0 2rem;
+	}
+
+	#who {
+		margin: 1rem 0 0 2rem;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#brickWall {
+		height: 220rem;
 	}	
+	#siteExplanation{
+		height: 36rem;
+	}
+	.nextButton {
+		width: 8rem;
+		height: 8rem;
+	}
+	#breakEmail {
+		display: block;
+	}
 }

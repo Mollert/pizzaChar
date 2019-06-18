@@ -1,11 +1,11 @@
 
 #brickWall {
-	height: 48rem;
+	height: 70rem;
 }
 
 #findIntro {
 	margin: 0 8vw;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	text-align: center;
 }
 
@@ -29,7 +29,7 @@
 }
 
 #secondChoice {
-	margin: 0 1rem;
+	margin: 1.2rem 1rem;
 }
 
 .toSelect {
@@ -50,7 +50,7 @@
 #findPizzaButton {
 	width: 16rem;
 	height: 3rem;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	font-weight: bold;
 	background-color: sienna;
 	color: blanchedalmond;
@@ -60,14 +60,14 @@
 
 #explainSearch,
 #headHome {
-	margin-top: 1.2rem;
-	font-size: 1.4rem;
+	margin: 1.2rem 1.4rem 0 1.4rem;
+	font-size: 1.2rem;
 	text-align: center;
 }
 
 .venue {
 	margin: 1rem 1rem;
-	font-size: 1.2rem	
+	font-size: 1.1rem	
 }
 
 .allComments {
@@ -97,6 +97,9 @@ a#fromFindPage:hover {
 }
 
 
-@media screen and (max-width: 500px) {
-
+@media screen and (max-width: 400px) {
+	.toSelect,
+	#findPizzaButton {
+		width: 12rem;
+	}
 }

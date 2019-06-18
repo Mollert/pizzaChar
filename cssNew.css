@@ -1,11 +1,11 @@
 
 #brickWall {
-	height: 60rem;
+	height: 70rem;
 }
 
 #whosNew {
-	margin: 0 8vw;
-	font-size: 1.4rem;
+	margin: 0 3rem 2rem 3rem;
+	font-size: 1.2rem;
 	text-align: center;
 }
 
@@ -17,12 +17,12 @@
 }
 
 input.entry {
-	margin: 3rem 0;	
+	margin: 3rem 0;
 	width: 20rem;
 	height: 2rem;
 	border: 0.2rem solid black;
 	border-radius: 0.4rem;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	font-weight: bold;
 	background-color: whitesmoke;
 }
@@ -44,7 +44,7 @@ input.entry:focus {
 
 .addedText {
 	margin: 3rem 0;		
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	text-align: center;
 	display: none;
 }
@@ -58,5 +58,9 @@ a#fromNewPage:hover {
 }
 
 @media screen and (max-width: 500px) {
-
+	input.entry,
+	#newSubmit {
+		width: 12rem;
+	}
 }
+

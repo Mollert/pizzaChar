@@ -45,6 +45,7 @@ document.querySelector("#pizzaPlace").addEventListener("click", (event) => {
 		document.getElementById("yourChoice").textContent = where;
 		document.getElementById("recordIntro").style.display = "block";
 		document.getElementById("allButtons").style.display = "block";
+		document.getElementById("brickWall").style.height = "140rem";
 
 		let group = document.querySelectorAll(".place");
 		for ( let i = 0 ; i < group.length ; i++ ) {

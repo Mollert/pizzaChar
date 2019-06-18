@@ -5,9 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<title>You can choose from list of the tastiest pizzas in Charlotte, NC</title>
+	<title>You can choose to list or find the tastiest pizza in Charlotte, NC</title>
 
-	<meta name="description" content="Either choose a specific type of pizza that satisfies your taste or add your favorite pizzerias style of pizza to the list .  These are all home grown in Charlotte, NC." />
+	<meta name="description" content="Either choose a pizza according to your preferences or add to our list your favorite pizzerias style of pizza. These are all home grown in Charlotte, NC." />
 	
 	<link rel="shortcut icon" href="image/pizzaFavicon.ico" type="image/x-icon">
 
@@ -20,12 +20,12 @@
 
 		<div id="hearth">
 
-			<div  id="siteTitle">Pizzas of Charlotte</div>
+			<div  id="siteTitle"><h1>Best Pizza of Charlotte</h1></div>
 
-			<div class="pizzaRow">
+			<div id="topRow" class="pizzaRow">
 				<div id="pizzaLocation">					
 					<img class="pizzaAndPad" src="./image/pizzaPaddle.png" alt="A pizza paddle."/>
-					<img class="pizzaAndPad" src="./image/slices/pepPieSliced.png" alt="Whole pizza-sliced."/>
+					<img class="pizzaAndPad" src="./image/slices/pepPieWhole.png" alt="Whole pizza."/>
 				</div>
 				<div id="siteExplanation">
 					<div class="siteText">Hey where'd the Pizza go!</div>
@@ -39,7 +39,7 @@
 				<img id="cornerUR" class="cornerButton" src="./image/cornerUR.png" alt="Upper right decorative corner."/>
 			</div>
 
-			<div class="pizzaRow">
+			<div id="findRow" class="pizzaRow">
 				<div id="findPizzaText">
 					<div id="radiusAroundFind"></div>
 					<div class="buttonText">When you click this pizza button you will be taken to a page where you can find a pizza to your liking from a local pizzeria, no national chains.  If you haunt one of the national chains, give a local pizza a try.  There is plenty of variety here in Charlotte.  The choices are gathered from each one of your experiences and then categorized and listed so you can see the options each one offers.  I do hope you find one that looks good to you!</div>
@@ -56,7 +56,7 @@
 				<img id="dividerImage" src="./image/divider.png" alt="Decorative divider between buttons."/>
 			</div>
 
-			<div class="pizzaRow">
+			<div id="reportRow" class="pizzaRow">
 				<div class="nextButton" id="reportPizza">
 					<form action="./htmlReport.html" target="_blank" method="POST">
 						<input type="image" id="reportPizzaButton" class="pizzaButton" src="./image/pieButton.png" alt="Whole pizza used as button.">
@@ -76,10 +76,12 @@
 			</div>
 			<div id="comments">
 				<div id="how">Direct your comments to:</div>
-				<div id="who">DMollert&#64;gmail.com</div>
+				<div id="who">DMollert<span id="breakEmail">&#64;gmail.com</span></div>
 			</div>
 		</div>
 	</div>
+
+	<script src="javascriptIndex.js"></script>
 
 </body>
 </html>

@@ -7,9 +7,11 @@ document.getElementById("newSubmit").addEventListener("click", () => {
 	if (newPizzeria === "") {
 		document.getElementById("requestNew").reset();
 		document.getElementById("didNotGetIt").style.display = "block";
+		document.getElementById("brickWall").style.height = "70rem";		
 	} else {
 		document.getElementById("requestNew").reset();
 		document.getElementById("showNew").style.display = "block";
 		document.getElementById("addPizzeria").textContent = newPizzeria;
-	}
+		document.getElementById("brickWall").style.height = "74rem";
+	}	
 });
