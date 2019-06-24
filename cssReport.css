@@ -29,7 +29,6 @@
 	border-radius: 0.4rem;
 	transition-property: border-radius;
 	transition-delay: 3600ms;
-
 }
 
 #pulldownList:hover {
@@ -89,6 +88,7 @@
 }
 
 #allButtons {
+	padding: 0 1rem;
 	display: none;
 }
 
@@ -142,7 +142,7 @@ input[type="radio"]:checked + label::after {
 }
 
 #textArea {
-	width: 22rem;
+	width: 20rem;
 	height: 4rem;
 	font-size: 1.2rem;	
 	background-color: whitesmoke;
@@ -177,6 +177,7 @@ input[type="radio"]:checked + label::after {
 #aboutInfo {	
 	font-size: 1.2rem;
 	text-align: center;
+	padding: 0 1rem;
 	display: none;
 }
 
@@ -201,6 +202,12 @@ a#fromReportPage:hover {
 	.place {
 		width: 20rem;
 	}
+	.justifyLeft {
+		margin-left: 0;
+	}
+	.justifyRight {
+		margin-right: 0;
+	}
 }
 
 @media screen and (max-width: 500px) {
@@ -208,6 +215,10 @@ a#fromReportPage:hover {
 	.place {
 		width: 16rem;
 		height: 4rem;		
+	}
+	#textArea,
+	#recordPizzaButton {
+		width: 12rem;
 	}
 }
 

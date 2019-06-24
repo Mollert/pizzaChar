@@ -1,6 +1,7 @@
 
 let places = [];
 
+// Sorting the Pizzerias alphabetically
 const organizePizzerias = () => {
 	pizzerias.forEach(item => {
 		places.push(item.name);
@@ -8,6 +9,8 @@ const organizePizzerias = () => {
 	places.sort();
 };
 
+// creating div's for each pizzeria appending
+// last div being a "not listed div"
 const loadPizzerias = () => {
 	organizePizzerias();
 
@@ -36,6 +39,8 @@ window.onload = () => {
 	loadPizzerias();
 };
 
+// grab pizzeria that was selected and then diplaying name and buttons for user to choose
+// set proper height for brick wall and then remove the other pizzeria selections
 document.querySelector("#pizzaPlace").addEventListener("click", (event) => {
 	let clicked = event.target;
 	let where = clicked.innerText;
@@ -45,7 +50,11 @@ document.querySelector("#pizzaPlace").addEventListener("click", (event) => {
 		document.getElementById("yourChoice").textContent = where;
 		document.getElementById("recordIntro").style.display = "block";
 		document.getElementById("allButtons").style.display = "block";
-		document.getElementById("brickWall").style.height = "140rem";
+
+		let heightDiff = (document.body.scrollHeight);
+		let newHeight = parseInt(heightDiff / 16);
+		let updatedHeight = newHeight + "rem";
+		document.getElementById("brickWall").style.height = updatedHeight;
 
 		let group = document.querySelectorAll(".place");
 		for ( let i = 0 ; i < group.length ; i++ ) {
@@ -54,6 +63,7 @@ document.querySelector("#pizzaPlace").addEventListener("click", (event) => {
 	}
 });
 
+// Grabing button information and displaying message dependant on results
 let recordData = [];
 
 document.getElementById("recordPizzaButton").addEventListener("click", () => {

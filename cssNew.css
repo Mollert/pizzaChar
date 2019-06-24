@@ -49,12 +49,20 @@ input.entry:focus {
 	display: none;
 }
 
+#showNewText {
+	padding: 0.6rem 0;
+}
+
 a#fromNewPage {
 	color: dimgray;
 }
 
 a#fromNewPage:hover {
 	color: brown;
+}
+
+#didNotGetItText {
+	padding: 0 0 0.6rem 0;	
 }
 
 @media screen and (max-width: 500px) {

@@ -1,15 +1,19 @@
 
+// Here I am setting the height of the brick wall to be responsive
 let heightDiff = (document.body.scrollHeight);
 // 4 equals comments div, 1 equals margin on how id and 3 is just space
 let newHeight = parseInt((heightDiff / 16) + 5 + 3);	
 let updatedHeight = newHeight + "rem";
 document.getElementById("brickWall").style.height = updatedHeight;
 
-
+// The following code dives the pizza slices to move
+// Need a random number from 1 to 8
 const randomN = () => Math.floor((Math.random() * 8) + 1)
+// Array lists the pizza slice (one through eight) and the coordinates they are traveling to (at 30 deg increments)
 const numTrav = [["one", 6.6, -16], ["two", 16, -6.6], ["three", 16, 6.6], ["four", 6.6, 16], ["five", -6.6, 16], ["six", -16, 6.6], ["seven", -16, -6.6], ["eight", -6.6, -16]];		
 let randomGroup = [];
 
+// Function creates array of 5 random non-duplicate numbers
 const getGroup = () => {
 	randomGroup = [];
 	randomGroup.push(randomN());					
@@ -28,7 +32,9 @@ const getGroup = () => {
 	return randomGroup
 };
 
+
 let u = 0;
+// First each piece is moved at a pace of 1 sec.  Then showing whole pizza after a pause and then starting again after 10 sec
 const moveSlices = () => {
 	getGroup();
 	let p = 0;
@@ -53,7 +59,7 @@ const moveSlices = () => {
 	}, 8000);
 
 	u++;
-	if (u < 6) {
+	if (u < 10) {
 		setTimeout( moveSlices, 10000 );
 	}
 };

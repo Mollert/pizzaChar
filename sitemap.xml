@@ -9,7 +9,17 @@
 		<priority>1.0</priority>
 	</url>
 	<url>	
-		<loc>http://www.dmollert.com/assets/mollert-resume.htm</loc>
+		<loc>http://www.pizzaChar.com/reportPizza</loc>
+		<lastmod>2019-05-11</lastmod>
+		<priority>0.8</priority>
+	</url>
+	<url>	
+		<loc>http://www.pizzaChar.com/findPizza</loc>
+		<lastmod>2019-05-11</lastmod>
+		<priority>0.8</priority>
+	</url>
+	<url>	
+		<loc>http://www.pizzaChar.com/newPizza</loc>
 		<lastmod>2019-05-11</lastmod>
 		<priority>0.8</priority>
 	</url>
