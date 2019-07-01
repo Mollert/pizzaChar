@@ -1,13 +1,16 @@
 
+let collection = [];
 let firstRemoval = [];
 let secondRemoval = [];
 let thirdRemoval = [];
 
-const loadOptions = (remove, where) => {	
-	selections.forEach(item => {
-		if (!(remove.includes(item.choice))) {
+
+
+const loadOptions = (remove, where) => {
+	collection.forEach(item => {	
+		if (!(remove.includes(item))) {
 			let choiceOption = document.createElement("option");
-			let optionText = document.createTextNode(item.choice);
+			let optionText = document.createTextNode(item);
 			choiceOption.appendChild(optionText);
 //			console.log(choiceOption);
 			document.getElementById(where).appendChild(choiceOption);
@@ -57,6 +60,12 @@ const removeGroup = (remove, whichArray) => {
 	}
 	return whichArray;
 };
+
+// Capturing options from the 1st preferences list coming from the server as soon as the page loads 
+let capture = document.getElementById("firstChoice").options;
+for ( i = 1 ; i < capture.length ; i++ ) {
+	collection.push(capture[i]["value"]);
+}
 
 
 document.getElementById("firstChoice").addEventListener("click", () => {

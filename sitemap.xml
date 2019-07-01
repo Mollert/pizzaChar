@@ -4,38 +4,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 	<url>
-		<loc>http://www.pizzaChar.com</loc>
+		<loc>https://www.pizzaChar.com</loc>
 		<lastmod>2019-06-30</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>	
-		<loc>http://www.pizzaChar.com/findPizzeria</loc>
+		<loc>https://www.pizzaChar.com/findPizzeria</loc>
 		<lastmod>2019-06-30</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>	
-		<loc>http://www.pizzaChar.com/findPizzeria/showMatches</loc>
-		<lastmod>2019-06-30</lastmod>
-		<priority>0.5</priority>
-	</url>
-	<url>	
-		<loc>http://www.pizzaChar.com/reportPizza</loc>
+		<loc>https://www.pizzaChar.com/reportPizza</loc>
 		<lastmod>2019-06-30</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>	
-		<loc>http://www.pizzaChar.com/reportPizza/collectInput</loc>
-		<lastmod>2019-06-30</lastmod>
-		<priority>0.5</priority>
-	</url>
-	<url>	
-		<loc>http://www.pizzaChar.com/suggestPizzeria</loc>
+		<loc>https://www.pizzaChar.com/suggestPizzeria</loc>
 		<lastmod>2019-06-30</lastmod>
 		<priority>1.0</priority>
 	</url>
-	<url>	
-		<loc>http://www.pizzaChar.com/suggestPizzeria/receivedSuggestion</loc>
-		<lastmod>2019-06-30</lastmod>
-		<priority>0.5</priority>
-	</url>
+	
 </urlset>

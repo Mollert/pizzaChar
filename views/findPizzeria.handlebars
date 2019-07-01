@@ -16,16 +16,28 @@
 				<div id="allChoices" class="pizzaColumn">
 					<div class="pizzaRow">
 						<select name="first" id="firstChoice" class="toSelect">
-							<option>1st preference</option>
+							{{#if userChoices}}
+								<option>{{userChoices.first}}</option>
+							{{else}}
+								<option>1st preference</option>
+							{{/if}}
 							{{#each options}}
 								<option>{{this.option}}</option>
 							{{/each}}							
 						</select>
 						<select name="second" id="secondChoice" class="toSelect">
-							<option>2nd preference</option>
+							{{#if userChoices}}							
+								<option>{{userChoices.second}}</option>
+							{{else}}
+								<option>2nd preference</option>
+							{{/if}}																							
 						</select>
 						<select name="third" id="thirdChoice" class="toSelect">
-							<option>3rd preference</option>
+							{{#if userChoices}}							
+								<option>{{userChoices.third}}</option>
+							{{else}}							
+								<option>3rd preference</option>
+							{{/if}}								
 						</select>
 					</div>
 				</div>
@@ -57,3 +69,5 @@
 
 		</div>
 	</div>
+
+	<script src="/javascript/findPizzeria.js"></script>

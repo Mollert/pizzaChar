@@ -87,6 +87,8 @@ router.post("/", function(req, res) {
 	commonTwo12 = [];
 
 
+	let userChoices = JSON.parse(JSON.stringify(req.body));
+
 	let tag = ["first", "second", "third"];
 	for ( let i = 0 ; i < 3 ; i++ ) {
 		if (((req.body[tag[i]]).indexOf("preference")) === -1) {
@@ -390,7 +392,7 @@ router.post("/", function(req, res) {
 	};
 
 
-	res.render("findPizzeria", {resultsMessage, outcome});
+	res.render("findPizzeria", {resultsMessage, outcome, userChoices});
 });
 
 
