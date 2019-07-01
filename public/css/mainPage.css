@@ -1,6 +1,6 @@
 
 @font-face {
-	src: url(./assets/CherryCreamSoda-Regular.ttf);
+	src: url(/assets/CherryCreamSoda-Regular.ttf);
 	font-family: CCS;
 }
 
@@ -12,7 +12,7 @@ html, body {
 }
 
 #brickWall {
-	background-image: url(./image/brickWall.png);
+	background-image: url(/image/brickWall.png);
 	background-repeat: repeat;
 	position: relative;
 	width: 100%;

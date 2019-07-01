@@ -1,0 +1,32 @@
+
+	<div id="brickWall">
+
+		<div id="hearth">
+
+			<div  id="siteTitle"><h1>Add a pizzeria</h1></div>
+
+			<div id="whosNew">Type in the name of the pizzeria that you've found and the next time you try their pizza, come on back.  They will be listed.</div>
+
+			<form id="requestNew" action="/suggestPizzeria/receivedSuggestion" method="POST">
+				<div class="newColumn">
+					<input type="text" id="newPizzeria" class="entry" autocomplete="off" name="newPizzeria">
+
+					<input type="submit" id="newSubmit" value="Send me the name">
+				</div>
+			</form>
+
+			{{#if message.received}}
+				<div id="showNew" class="addedText newColumn">
+					<div>I got the name "<span id="addPizzeria">{{message.business}}</span>".</div>
+					<div id="showNewText">So let me add it to the group.</div>
+					<div>And for you, a quick <a id="fromNewPage" href="/">click</a> and you'll be back home . . .</div>
+				</div>
+			{{/if}}
+			{{#if message.none}}
+				<div id="didNotGetIt" class="addedText newColumn">
+					<div id="didNotGetItText">I didn't get a name so maybe try again.</div>
+					<div>If you want to get back to home, here is the <a id="fromNewPage" href="/">click</a>.</div>
+				</div>
+			{{/if}}
+		</div>
+	</div>

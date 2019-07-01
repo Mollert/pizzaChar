@@ -39,7 +39,7 @@ const moveSlices = () => {
 	getGroup();
 	let p = 0;
 	const eachSlice = () => {
-		let whichOne = numTrav[randomGroup[p]-1][0];
+		let whichOne = numTrav[randomGroup[p]-1][0];	
 		let theX = numTrav[randomGroup[p]-1][1];
 		let theY = numTrav[randomGroup[p]-1][2];
 		let cssString = "animation-name: mover; --movingX: " + theX + "rem; --movingY: " + theY + "rem;";

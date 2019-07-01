@@ -1,0 +1,28 @@
+{
+  "name": "pizzachar",
+  "version": "1.0.0",
+  "description": "A interactive site where you can report on, or find a, Charlotte local pizza of your liking.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mollert/pizzaChar.git"
+  },
+  "author": "David Mollert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mollert/pizzaChar/issues"
+  },
+  "homepage": "https://github.com/Mollert/pizzaChar#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1",
+    "path": "^0.12.7",
+    "request": "^2.88.0"
+  }
+}

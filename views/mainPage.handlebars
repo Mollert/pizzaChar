@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<title>You can choose to list or find the tastiest pizza in Charlotte, NC</title>
-
-	<meta name="description" content="Either choose a pizza according to your preferences or add to our list your favorite pizzerias style of pizza. These are all home grown in Charlotte, NC." />
-	
-	<link rel="shortcut icon" href="assets/pizzaFavicon.ico" type="image/x-icon">
-
-	<link rel="stylesheet" type="text/css" href="cssIndex.css">
-
-</head>
-<body>
 
 	<div id="brickWall">
 
@@ -25,14 +8,14 @@
 			<div id="topRow" class="pizzaRow">
 				<div id="pizzaLocation">					
 					<img class="pizzaAndPad" src="./image/pizzaPaddle.png" alt="A pizza paddle."/>
-					<img id="one" class="pizzaAndPad" src="./image/sliceUpperRight.png" alt="Slice of pizza."/>
-					<img id="two" class="pizzaAndPad" src="./image/sliceRightUpper.png" alt="Slice of pizza."/>		
-					<img id="three" class="pizzaAndPad" src="./image/sliceRightLower.png" alt="Slice of pizza."/>
-					<img id="four" class="pizzaAndPad" src="./image/sliceLowerRight.png" alt="Slice of pizza."/>
-					<img id="five" class="pizzaAndPad" src="./image/sliceLowerLeft.png" alt="Slice of pizza."/>
-					<img id="six" class="pizzaAndPad" src="./image/sliceLeftLower.png" alt="Slice of pizza."/>
-					<img id="seven" class="pizzaAndPad" src="./image/sliceLeftUpper.png" alt="Slice of pizza."/>
-					<img id="eight" class="pizzaAndPad" src="./image/sliceUpperLeft.png" alt="Slice of pizza."/>
+					<img id="one" class="pizzaAndPad" src="./image/sliceUpperRight.png" alt="Slice of pizza." style=" "/>
+					<img id="two" class="pizzaAndPad" src="./image/sliceRightUpper.png" alt="Slice of pizza." style=" "/>		
+					<img id="three" class="pizzaAndPad" src="./image/sliceRightLower.png" alt="Slice of pizza." style=" "/>
+					<img id="four" class="pizzaAndPad" src="./image/sliceLowerRight.png" alt="Slice of pizza." style=" "/>
+					<img id="five" class="pizzaAndPad" src="./image/sliceLowerLeft.png" alt="Slice of pizza." style=" "/>
+					<img id="six" class="pizzaAndPad" src="./image/sliceLeftLower.png" alt="Slice of pizza." style=" "/>
+					<img id="seven" class="pizzaAndPad" src="./image/sliceLeftUpper.png" alt="Slice of pizza." style=" "/>
+					<img id="eight" class="pizzaAndPad" src="./image/sliceUpperLeft.png" alt="Slice of pizza." style=" "/>
 				</div>
 				<div id="siteExplanation">
 					<div class="siteText">Hey where'd the Pizza go!</div>
@@ -53,7 +36,7 @@
 				</div>
 
 				<div class="nextButton" id="findPizza">
-					<form action="./htmlFind.html" target="_blank" method="POST">
+					<form action="/findPizzeria" method="GET">
 						<input type="image" id="findPizzaButton" class="pizzaButton" src="./image/pieButton.png" alt="Whole pizza used as button.">
 					</form>		
 				</div>
@@ -65,7 +48,7 @@
 
 			<div id="reportRow" class="pizzaRow">
 				<div class="nextButton" id="reportPizza">
-					<form action="./htmlReport.html" target="_blank" method="POST">
+					<form action="/reportPizza" method="GET">
 						<input type="image" id="reportPizzaButton" class="pizzaButton" src="./image/pieButton.png" alt="Whole pizza used as button.">
 					</form>
 				</div>
@@ -87,8 +70,3 @@
 			</div>
 		</div>
 	</div>
-
-	<script src="javascriptIndex.js"></script>
-
-</body>
-</html>

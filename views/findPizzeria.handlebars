@@ -1,0 +1,59 @@
+
+	<div id="brickWall">
+
+		<div id="hearth">
+
+			<div  id="siteTitle"><h1>Find a pizza</h1></div>
+
+			<div id="findIntro">
+				<div class="introText">To find your perfect pizza in Charlotte.</div>
+				<div class="introText">First choose up to three preferences,</div>
+				<div class="introText">1st, 2nd and 3rd.</div>
+				<div class="introText">Then click "find" and your choices will pick the pizza.</div>
+			</div>
+
+			<form id="requestFind" action="/findPizzeria/showMatches" method="POST">
+				<div id="allChoices" class="pizzaColumn">
+					<div class="pizzaRow">
+						<select name="first" id="firstChoice" class="toSelect">
+							<option>1st preference</option>
+							{{#each options}}
+								<option>{{this.option}}</option>
+							{{/each}}							
+						</select>
+						<select name="second" id="secondChoice" class="toSelect">
+							<option>2nd preference</option>
+						</select>
+						<select name="third" id="thirdChoice" class="toSelect">
+							<option>3rd preference</option>
+						</select>
+					</div>
+				</div>
+
+				<div  id="findPizza" class="pizzaColumn">
+					<input type="submit" id="findPizzaButton" value="Find your pizza!">	
+				</div>
+			</form>
+
+			<div id="explainSearch">{{resultsMessage}}</div>
+			<div id="searchResults">
+				{{#each outcome}}
+					<div class="venue">{{name}}: <a href="{{website}}" target="_blank">I'll take you to them</a>
+						{{#each comments}}
+							<div class="allComments">
+								<div class="oneComment">
+									<div class="dateComment">Comment:<span class="date">{{this.date}}</span></div>
+									<div class="comment">{{this.comment}}</div>
+								</div>
+							</div>
+						{{/each}}
+					</div>
+				{{/each}}				
+			</div>
+
+			<div id="headHome">
+				<div>If you'd like, a quick <a id="fromFindPage" href="/">click</a> and you'll be back to home . . .</div>
+			</div>
+
+		</div>
+	</div>

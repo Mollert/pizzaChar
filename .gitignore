@@ -1,3 +1,7 @@
-#node_modules
-#.env
-notUsed/
+node_modules/
+.env/
+siteConstruction/
+unUsedImage/
+betaHtml/
+betaCss/
+betaJavascript/
