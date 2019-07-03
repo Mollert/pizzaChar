@@ -35,7 +35,7 @@ const removeGroup = (remove, whichArray) => {
 			break;
 		case "Sauce: Chuncky":
 		case "Sauce: Liquid":
-			whichArray.push("Sauce: Chuncky", "Sauce: Liquid");
+			whichArray.push("Sauce: Chunky", "Sauce: Liquid");
 			break;
 		case "Sauce: Heavy":
 		case "Sauce: Light":

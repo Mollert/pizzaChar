@@ -23,7 +23,7 @@ const selections = [
 		"choice": "Crust: No taste at all"
 	},{
 		"id": 7,
-		"choice": "Sauce: Chuncky"
+		"choice": "Sauce: Chunky"
 	},{
 		"id": 8,
 		"choice": "Sauce: Liquid"
