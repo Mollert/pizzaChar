@@ -20,29 +20,22 @@ let commonTwo12 = [];
 
 
 
-const reorderSolutions = (unorderedArray) => {
-	if (unorderedArray.length === 0 || unorderedArray.length === 1) {
-		return unorderedArray;
+const randomizeSolutions = (defaultArray) => {
+	if (defaultArray.length === 0 || defaultArray.length === 1) {
+		return defaultArray;
 	}
-	let addedTogether = "";
-	let capLetters = [];
-	let orderedArray = [];
-	unorderedArray.forEach (idNum => {
-		pizzerias.forEach(entry => {
-			if (entry.id === idNum) {
-				addedTogether = entry.name;
-				addedTogether += "#";
-				addedTogether += idNum;
-				capLetters.push(addedTogether);				
-			}
-		});
-	});
-	capLetters.sort();
-	capLetters.forEach (toID => {
-		orderedArray.push(Number(toID.substring(toID.indexOf("#")+1)));
-	});
-//	console.log(orderedArray);
-	return orderedArray;		
+			
+	let randomizedArray = [];
+	let originalLength = defaultArray.length;
+
+	for ( let i = 1 ; i < originalLength ; i++ ) {
+		let subtracter = Math.floor((Math.random() * defaultArray.length));
+		randomizedArray.push(defaultArray[subtracter]);
+		defaultArray.splice(subtracter, 1);
+	}
+	randomizedArray.push(defaultArray[0]);
+
+	return randomizedArray;
 };
 
 const gatherDataForDisplay = (dataArray) => {
@@ -67,7 +60,7 @@ const gatherDataForDisplay = (dataArray) => {
 };
 
 const orgAndPackage = (what) => {
-	what = reorderSolutions(what);
+	what = randomizeSolutions(what);
 	gatherDataForDisplay(what);
 };
 
@@ -129,7 +122,7 @@ router.post("/", function(req, res) {
 	});
 /*
 	console.log(allPizzerias);
-	allPizzerias[0] = reorderSolutions(allPizzerias[0]);
+	allPizzerias[0] = randomizeSolutions(allPizzerias[0]);
 	console.log(allPizzerias[0]);
 	console.log(recordChoices);
 */

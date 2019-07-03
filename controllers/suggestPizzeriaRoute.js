@@ -3,7 +3,7 @@ const express = require("express");
 const request = require("request");
 const router = express.Router();
 
-//const drink = require("../data/drink.js");
+const pizzerias = require("../data/pizzerias.js");
 
 
 // To suggest a new pizzeria main page
@@ -25,6 +25,15 @@ router.post("/receivedSuggestion", function(req, res) {
 
 	let addPizzeria = JSON.parse(JSON.stringify(req.body));
 	let placeName = addPizzeria.newPizzeria;
+
+	if (placeName !== "") {
+		pizzerias.push( {
+			id: pizzerias.length,
+			name: placeName,
+			website: "https://www.google.com"
+		});
+	}
+
 	let message = {
 		received: false,
 		none: true,

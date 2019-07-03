@@ -100,3 +100,15 @@ document.getElementById("secondChoice").addEventListener("click", () => {
 		loadOptions(thirdRemoval, "thirdChoice");
 	}
 });
+
+
+
+let heightDiff = (document.body.scrollHeight);
+let newHeight = parseInt(heightDiff / 16);
+//console.log(newHeight);
+if (newHeight > 70) {
+	newHeight = newHeight + 5 + 3;
+	let updatedHeight = newHeight + "rem";
+	document.getElementById("brickWall").style.height = updatedHeight;
+}
+//console.log(newHeight);
