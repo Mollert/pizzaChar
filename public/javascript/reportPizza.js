@@ -4,6 +4,7 @@
 document.querySelector("#pizzaPlace").addEventListener("click", (event) => {
 	let clicked = event.target;
 	let where = clicked.innerText;
+//	console.log(event.target);	
 //	console.log(event.target.childElementCount);
 //	console.log(event.target.className);
 

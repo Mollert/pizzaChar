@@ -1,10 +1,13 @@
 
 // Here I am setting the height of the brick wall to be responsive
 let heightDiff = (document.body.scrollHeight);
-// 4 equals comments div, 1 equals margin on how id and 3 is just space
-let newHeight = parseInt((heightDiff / 16) + 5 + 3);	
-let updatedHeight = newHeight + "rem";
-document.getElementById("brickWall").style.height = updatedHeight;
+let newHeight = parseInt(heightDiff / 16);	
+if (newHeight > 70) {
+// 4 equals comments div, 1 equals margin on how id and 3 is just space	
+	newHeight = newHeight + 5 + 3;
+	let updatedHeight = newHeight + "rem";
+	document.getElementById("brickWall").style.height = updatedHeight;
+}
 
 // The following code dives the pizza slices to move
 // Need a random number from 1 to 8
@@ -64,4 +67,6 @@ const moveSlices = () => {
 	}
 };
 
-moveSlices();
+setTimeout(function() {
+	moveSlices();
+}, 1500);
