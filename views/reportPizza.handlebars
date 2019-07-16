@@ -34,7 +34,7 @@
   						<label class="before" for="thinThick">Thin center / Thick crust</label>
 					</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="thick" name="crustTT" value="thick">
+  						<input type="radio" id="thick" name="crustTT" value="thickThick">
   						<label class="before" for="thick">Thick center / Thick crust</label>
 					</div>
 					<div class="radioAndLabel">
@@ -78,11 +78,11 @@
 				<div id="recordSauceT" class="radioBank justifyRight pizzaColumn">
 					<div id="sauceIntroType">Let's move on to the sauce.</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="chunky" name="sauceType" value="chunky">
+  						<input type="radio" id="chunky" name="sauceType" value="sChunky">
   						<label class="after" for="chunky">Chunky</label>
 					</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="liquid" name="sauceType" value="liquid">
+  						<input type="radio" id="liquid" name="sauceType" value="sLiquid">
   						<label class="after" for="liquid">Liquid</label>
 					</div>
 					<div class="radioAndLabel">
@@ -94,11 +94,11 @@
 				<div id="recordSauceQ" class="radioBank justifyLeft pizzaColumn">
 					<div id="sauceIntroQty">Too much or too little sauce.</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="heavy" name="sauceQty" value="heavy">
+  						<input type="radio" id="heavy" name="sauceQty" value="sHeavy">
   						<label class="before" for="heavy">Heavy sauce</label>
 					</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="light" name="sauceQty" value="light">
+  						<input type="radio" id="light" name="sauceQty" value="sLight">
   						<label class="before" for="light">Light sauce</label>
 					</div>
 					<div class="radioAndLabel">
@@ -110,15 +110,15 @@
 				<div id="recordCheese" class="radioBank justifyRight pizzaColumn">
 					<div id="cheeseIntro">Rate the quantity of cheese.</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="lightCheese" name="cheese" value="lightCheese">
+  						<input type="radio" id="lightCheese" name="cheese" value="cLight">
   						<label class="after" for="lightCheese">Light cheese</label>
 					</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="cheese" name="cheese" value="cheese">
+  						<input type="radio" id="cheese" name="cheese" value="cModerate">
   						<label class="after" for="cheese">Moderate</label>
 					</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="heavyCheese" name="cheese" value="heavyCheese">
+  						<input type="radio" id="heavyCheese" name="cheese" value="cHeavy">
   						<label class="after" for="heavyCheese">Heavy</label>
 					</div>
 					<div class="radioAndLabel">
@@ -130,19 +130,19 @@
 				<div id="recordOven" class="radioBank justifyLeft pizzaColumn">
 					<div id="ovenIntro">For those afficionados, the oven type.</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="wood" name="oven" value="wood">
+  						<input type="radio" id="wood" name="oven" value="oWood">
   						<label class="before" for="wood">Wood</label>
 					</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="gasFlame" name="oven" value="gasFlame">
+  						<input type="radio" id="gasFlame" name="oven" value="oGas">
   						<label class="before" for="gasFlame">Gas flame</label>
 					</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="electric" name="oven" value="electric">
+  						<input type="radio" id="electric" name="oven" value="oElectric">
   						<label class="before" for="electric">Electric</label>
 					</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="grill" name="oven" value="grill">
+  						<input type="radio" id="grill" name="oven" value="oGrill">
   						<label class="before" for="grill">Grill</label>
 					</div>
 					<div class="radioAndLabel">
@@ -154,7 +154,7 @@
 				<div id="recordSlice" class="radioBank justifyRight pizzaColumn">
 					<div id="sliceIntro">Can you buy just a slice?</div>
 					<div class="radioAndLabel">
-  						<input type="radio" id="yesSlice" name="slice" value="yesSlice">
+  						<input type="radio" id="yesSlice" name="slice" value="slice">
   						<label class="after" for="yesSlice">Yes you can</label>
 					</div>
 					<div class="radioAndLabel">
@@ -165,7 +165,7 @@
 
 				<div id="recordComment" class="pizzaColumn">
  					<label for="textArea" id="thisLabel">Add a short comment if you'd like.</label>
- 					<textarea id="textArea" name="comment" maxlength="80"></textarea>
+ 					<textarea id="textArea" name="comment" maxlength="120"></textarea>
 				</div>
 
 				<div  id="recordPizza" class="pizzaColumn">

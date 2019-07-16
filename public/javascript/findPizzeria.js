@@ -4,6 +4,8 @@ let firstRemoval = [];
 let secondRemoval = [];
 let thirdRemoval = [];
 
+
+
 const loadOptions = (remove, where) => {
 	collection.forEach(item => {	
 		if (!(remove.includes(item))) {

@@ -3,7 +3,7 @@ const express = require("express");
 const request = require("request");
 const router = express.Router();
 
-const pizzerias = require("../data/pizzerias.js");
+const connection = require("../config/connection.js");
 
 
 // To suggest a new pizzeria main page
@@ -23,36 +23,41 @@ router.get("/", (req, res) => {
 // Receives a suggestion of a new pizzeria
 router.post("/receivedSuggestion", function(req, res) {
 
+	res.locals.metaTag = {
+		title: "If we did not receive your suggestion, please try again",
+		content: "We will tell you if we did not receive your pizzeria suggestion.  But if we did, thanks for sharing your pizza discovery so we all can enjoy.",	
+		link: "/css/suggestPizzeria.css"
+	};	
+
 	let addPizzeria = JSON.parse(JSON.stringify(req.body));
 	let placeName = addPizzeria.newPizzeria;
-
-	if (placeName !== "") {
-		pizzerias.push( {
-			id: pizzerias.length,
-			name: placeName,
-			website: "https://www.google.com"
-		});
-	}
 
 	let message = {
 		received: false,
 		none: true,
 		business: ""
-	}
+		}
 
 	if (placeName !== "") {
-		message.received = true;
-		message.none = false;		
-		message.business = placeName;
+
+		let queryString = "INSERT INTO suggestions (newPlace) VALUES (?)";
+		// Add to the database		
+		connection.query(queryString, [placeName], (error, row, fields) => {
+			if (error) {
+				console.log(error);
+			} else {
+				message.received = true;
+				message.none = false;		
+				message.business = placeName;
+			}
+
+			res.render("suggestPizzeria", {message});
+		});
+	} else {
+
+		res.render("suggestPizzeria", {message});
 	}
 
-	res.locals.metaTag = {
-		title: "If we did not receive your suggestion, please try again",
-		content: "We will tell you if we did not receive your pizzeria suggestion.  But if we did, thanks for sharing your pizza discovery so we all can enjoy.",	
-		link: "/css/suggestPizzeria.css"
-	};
-
-	res.render("suggestPizzeria", {message})
 });
 
 

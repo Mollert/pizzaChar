@@ -3,9 +3,7 @@ const express = require("express");
 const request = require("request");
 const router = express.Router();
 
-//const pizzerias = require("../data/pizzerias.js");
-//const reports = require("../data/reports.js");
-const selections = require("../data/selections.js");
+const selections = ["Crust: Thin center/Thin crust", "Crust: Thin center/Thick crust", "Crust: Thick center/Thick crust", "Crust: Chewy", "Crust: Crisp", "Crust: Tasty all by itself", "Crust: No taste at all", "Sauce: Chunky", "Sauce: Liquid", "Sauce: Heavy", "Sauce: Light", "Cheese: Light", "Cheese: Moderate", "Cheese: Heavy", "Oven: Wood", "Oven: Gas flame", "Oven: Electric", "Oven: Grill", "By the slice"];
 
 
 // To find a pizzeria main page
@@ -15,7 +13,7 @@ router.get("/", (req, res) => {
 
 	selections.forEach(type => {
 		options.push( {
-			option: type["choice"]
+			option: type
 		});
 	});
 

@@ -1,0 +1,27 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+	<url>
+		<loc>https://www.pizzaChar.com</loc>
+		<lastmod>2019-06-30</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>	
+		<loc>https://www.pizzaChar.com/findPizzeria</loc>
+		<lastmod>2019-06-30</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>	
+		<loc>https://www.pizzaChar.com/reportPizza</loc>
+		<lastmod>2019-06-30</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>	
+		<loc>https://www.pizzaChar.com/suggestPizzeria</loc>
+		<lastmod>2019-06-30</lastmod>
+		<priority>1.0</priority>
+	</url>
+	
+</urlset>
