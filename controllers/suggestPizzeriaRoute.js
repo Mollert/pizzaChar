@@ -21,16 +21,16 @@ router.get("/", (req, res) => {
 
 
 // Receives a suggestion of a new pizzeria
-router.post("/receivedSuggestion", function(req, res) {
+router.post("/receivedSuggestion", function(req, res, next) {
 
 	res.locals.metaTag = {
 		title: "If we did not receive your suggestion, please try again",
 		content: "We will tell you if we did not receive your pizzeria suggestion.  But if we did, thanks for sharing your pizza discovery so we all can enjoy.",	
 		link: "/css/suggestPizzeria.css"
-	};	
+	};
 
-	let addPizzeria = JSON.parse(JSON.stringify(req.body));
-	let placeName = addPizzeria.newPizzeria;
+	let placeName = (req.body).newPizzeria;
+	console.log(placeName);
 
 	let message = {
 		received: false,
@@ -44,7 +44,7 @@ router.post("/receivedSuggestion", function(req, res) {
 		// Add to the database		
 		connection.query(queryString, [placeName], (error, row, fields) => {
 			if (error) {
-				console.log(error);
+				return next(error);
 			} else {
 				message.received = true;
 				message.none = false;		

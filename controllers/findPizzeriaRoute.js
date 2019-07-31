@@ -25,6 +25,8 @@ router.get("/", (req, res) => {
 	};
 
  	res.render("findPizzeria", {options});
+
 });
+
 
 module.exports = router;

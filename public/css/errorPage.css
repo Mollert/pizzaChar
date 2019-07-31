@@ -1,0 +1,21 @@
+
+#brickWall {
+	height: 70rem;
+}
+
+.errorInfo {
+	margin: 0 3rem 1rem 3rem;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+a#fromErrorPage {
+	color: dimgray;
+}
+
+a#fromErrorPage:hover {
+	color: brown;
+}
+
+
+

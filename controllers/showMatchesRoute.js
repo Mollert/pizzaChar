@@ -159,7 +159,7 @@ router.post("/", function(req, res) {
 	comments = [];	
 	outcome = [];
 
-	let userChoices = JSON.parse(JSON.stringify(req.body));
+	let userChoices = req.body;
 
 	let tag = ["first", "second", "third"];
 	for ( let i = 0 ; i < 3 ; i++ ) {

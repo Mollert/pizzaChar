@@ -6,7 +6,7 @@ const router = express.Router();
 const connection = require("../config/connection.js");
 
 // collects the users description
-router.post("/", function(req, res) {
+router.post("/", function(req, res, next) {
 
 	res.locals.metaTag = {
 		title: "I've received your input describing a local Charlotte NC pizza",
@@ -14,7 +14,7 @@ router.post("/", function(req, res) {
 		link: "/css/reportPizza.css"
 	};
 
-	let input = JSON.parse(JSON.stringify(req.body));
+	let input = req.body;
 //console.log(input);
 
 	let pizzeria = input.pizzeria;
@@ -47,25 +47,20 @@ router.post("/", function(req, res) {
 		let queryString = "SELECT placeId FROM pizzerias WHERE name = (?)";
 		//  to the database		
 		connection.query(queryString, [pizzeria], (error, row, fields) => {
-			if (error) {
-				console.log(error);	
-			}
+			if (error) { return next(error); }
+
 			userPicks.pizzeriaId = row[0]["placeId"];
 
 			let queryString = "INSERT INTO reports SET ?";
 			//  to the database		
 			connection.query(queryString, userPicks, (error, row, fields) => {
-				if (error) {
-					console.log(error);	
-				}
+				if (error) { return next(error); }
 
 				inputMessage = "I got your inputs.  I'll add them with the others for " + pizzeria + ".  Thanks for participating.";
 
 				res.render("collectedInput", {inputMessage});
-
 			});
 		});
-
 	} else {
 		inputMessage = 'All I got was "No opinions".  So maybe try again.';
 
