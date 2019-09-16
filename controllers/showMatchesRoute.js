@@ -142,7 +142,7 @@ const orgDataForDisplay = (places, details, biz) => {
 };
 
 // Shows pizzerias that match preferences
-router.post("/", function(req, res) {
+router.post("/", function(req, res, next) {
 
 	res.locals.metaTag = {
 		title: "Here are the pizzerias that match your chosen preferences",
@@ -183,9 +183,7 @@ router.post("/", function(req, res) {
 
 		let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${oneChoice} = 1`;
 		connection.query(queryString, (error, product, fields) => {
-			if (error) {
-				console.log(error);	
-			}
+			if (error) { return next(error); }
 			if (product.length === 0) {
 				resultsMessage = outputMessage[1];
 				res.render("findPizzeria", {resultsMessage, userChoices});					
@@ -204,9 +202,7 @@ router.post("/", function(req, res) {
 //	console.log(resultsMessage);
 				let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";
 				connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-					if (error) {
-						console.log(error);	
-					}
+					if (error) { return next(error); }
 //					console.log(reaction);
 //					console.log(product);
 					orgDataForDisplay(allPizzerias, product, reaction);
@@ -223,21 +219,15 @@ router.post("/", function(req, res) {
 
 		let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${oneChoice} = 1 AND ${twoChoice} = 1`;
 		connection.query(queryString, (error, product, fields) => {
-			if (error) {
-				console.log(error);	
-			}
+			if (error) { return next(error); }
 			if (product.length === 0) {					
 				let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${oneChoice} = 1`;
 				connection.query(queryString, (error, productt, fields) => {
-					if (error) {
-						console.log(error);
-					}			
+					if (error) { return next(error); }		
 					if (productt.length === 0) {
 						let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${twoChoice} = 1`;
 						connection.query(queryString, (error, producttt, fields) => {
-							if (error) {
-								console.log(error);
-							}
+							if (error) { return next(error); }
 							if (producttt.length === 0) {
 								resultsMessage = outputMessage[2];
 								res.render("findPizzeria", {resultsMessage, userChoices});									
@@ -253,9 +243,7 @@ router.post("/", function(req, res) {
 								allPizzerias = randomizeSolutions(allPizzerias);
 								let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";	
 								connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-									if (error) {
-										console.log(error);	
-									}
+									if (error) { return next(error); }
 									orgDataForDisplay(allPizzerias, producttt, reaction);
 									res.render("findPizzeria", {resultsMessage, outcome, userChoices});											
 								});
@@ -273,9 +261,7 @@ router.post("/", function(req, res) {
 						allPizzerias = randomizeSolutions(allPizzerias);				
 						let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";					
 						connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-							if (error) {
-								console.log(error);	
-							}
+							if (error) { return next(error); }
 							orgDataForDisplay(allPizzerias, productt, reaction);
 							res.render("findPizzeria", {resultsMessage, outcome, userChoices});								
 						});						
@@ -289,9 +275,7 @@ router.post("/", function(req, res) {
 					resultsMessage = outputMessage[9];
 					let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";					
 					connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-						if (error) {
-							console.log(error);	
-						}
+						if (error) { return next(error); }
 						orgDataForDisplay(allPizzerias, product, reaction);
 						res.render("findPizzeria", {resultsMessage, outcome, userChoices});								
 					});
@@ -300,9 +284,7 @@ router.post("/", function(req, res) {
 					allPizzerias = randomizeSolutions(allPizzerias);
 					let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";	
 					connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-						if (error) {
-							console.log(error);	
-						}
+						if (error) { return next(error); }
 						orgDataForDisplay(allPizzerias, product, reaction);
 						res.render("findPizzeria", {resultsMessage, outcome, userChoices});								
 					});
@@ -319,45 +301,31 @@ router.post("/", function(req, res) {
 
 		let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${oneChoice} = 1 AND ${twoChoice} = 1 AND ${threeChoice} = 1`;
 		connection.query(queryString, (error, product, fields) => {
-			if (error) {
-				console.log(error);	
-			}
+			if (error) { return next(error); }
 			if (product.length === 0) {				
 				let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${oneChoice} = 1 AND ${twoChoice} = 1`;
 				connection.query(queryString, (error, productt, fields) => {
-					if (error) {
-						console.log(error);	
-					}
+					if (error) { return next(error); }
 					if (productt.length === 0) {					
 						let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${oneChoice} = 1 AND ${threeChoice} = 1`;
 						connection.query(queryString, (error, producttt, fields) => {
-							if (error) {
-								console.log(error);
-							}
+							if (error) { return next(error); }
 							if (producttt.length === 0) {
 								let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${twoChoice} = 1 AND ${threeChoice} = 1`;
 								connection.query(queryString, (error, productttt, fields) => {
-									if (error) {
-										console.log(error);
-									}
+									if (error) { return next(error); }
 									if (productttt.length === 0) {
 										let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${oneChoice} = 1`;
 										connection.query(queryString, (error, producttttt, fields) => {
-											if (error) {
-												console.log(error);
-											}
+											if (error) { return next(error); }
 											if (producttttt.length === 0) {					
 												let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${twoChoice} = 1`;
 												connection.query(queryString, (error, productttttt, fields) => {
-													if (error) {
-														console.log(error);
-													}			
+													if (error) { return next(error); }		
 													if (productttttt.length === 0) {
 														let queryString = `SELECT pizzeriaId, date, comment FROM reports WHERE ${threeChoice} = 1`;
 														connection.query(queryString, (error, producttttttt, fields) => {
-															if (error) {
-																console.log(error);
-															}
+															if (error) { return next(error); }
 															if (producttttttt.length === 0) {
 																resultsMessage = outputMessage[11];
 																res.render("findPizzeria", {resultsMessage, userChoices});									
@@ -393,9 +361,7 @@ router.post("/", function(req, res) {
 														allPizzerias = randomizeSolutions(allPizzerias);
 														let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";	
 														connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-															if (error) {
-																console.log(error);	
-															}
+															if (error) { return next(error); }
 															orgDataForDisplay(allPizzerias, productttttt, reaction);
 															res.render("findPizzeria", {resultsMessage, outcome, userChoices});											
 														});
@@ -413,9 +379,7 @@ router.post("/", function(req, res) {
 												allPizzerias = randomizeSolutions(allPizzerias);
 												let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";	
 												connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-													if (error) {
-														console.log(error);	
-													}
+													if (error) { return next(error); }
 													orgDataForDisplay(allPizzerias, producttttt, reaction);
 													res.render("findPizzeria", {resultsMessage, outcome, userChoices});											
 												});
@@ -433,9 +397,7 @@ router.post("/", function(req, res) {
 										allPizzerias = randomizeSolutions(allPizzerias);
 										let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";	
 										connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-											if (error) {
-												console.log(error);	
-											}
+											if (error) { return next(error); }
 											orgDataForDisplay(allPizzerias, productttt, reaction);
 											res.render("findPizzeria", {resultsMessage, outcome, userChoices});											
 										});
@@ -453,9 +415,7 @@ router.post("/", function(req, res) {
 								allPizzerias = randomizeSolutions(allPizzerias);
 								let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";	
 								connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-									if (error) {
-										console.log(error);	
-									}
+									if (error) { return next(error); }
 									orgDataForDisplay(allPizzerias, producttt, reaction);
 									res.render("findPizzeria", {resultsMessage, outcome, userChoices});											
 								});
@@ -473,9 +433,7 @@ router.post("/", function(req, res) {
 						allPizzerias = randomizeSolutions(allPizzerias);
 						let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";	
 						connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-							if (error) {
-								console.log(error);	
-							}
+							if (error) { return next(error); }
 							orgDataForDisplay(allPizzerias, productt, reaction);
 							res.render("findPizzeria", {resultsMessage, outcome, userChoices});											
 						});
@@ -493,9 +451,7 @@ router.post("/", function(req, res) {
 				allPizzerias = randomizeSolutions(allPizzerias);
 				let queryString = "SELECT placeId, name, website FROM pizzerias WHERE placeId IN (?)";	
 				connection.query(queryString, [allPizzerias], (error, reaction, fields) => {
-					if (error) {
-						console.log(error);	
-					}
+					if (error) { return next(error); }
 					orgDataForDisplay(allPizzerias, product, reaction);
 					res.render("findPizzeria", {resultsMessage, outcome, userChoices});											
 				});
